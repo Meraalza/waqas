@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" })
 
 export const metadata: Metadata = {
-  title: "Waqas Bukhari | AI Automation Expert & Full-Stack Developer",
+  title: "Waqas Bukhari | AI Automation Expert & Web Developer",
   description:
     "Portfolio of Waqas Bukhari, AI Automation Expert specializing in intelligent business solutions, full-stack development, and cutting-edge automation technologies. Transform your business with AI-powered solutions.",
   keywords: [
