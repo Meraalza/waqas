@@ -141,7 +141,7 @@ export default function HeroSectionNew() {
           >
             <div className="relative glass rounded-xl p-4 border border-white/10 max-w-xs">
               <div className="w-24 h-24 mx-auto mb-3 rounded-lg overflow-hidden border-2 border-primary/30 relative">
-                <Image src="/images/ibrahim-avatar.png" alt="Waqas Bukhari" fill className="object-cover" priority />
+                <Image src="/images/waqas-bukhari.webp" alt="Waqas Bukhari" fill className="object-cover" priority />
               </div>
               <div className="text-center">
                 <h3 className="text-base font-bold mb-1">Waqas Bukhari</h3>
@@ -239,7 +239,7 @@ export default function HeroSectionNew() {
                 <div className="relative z-10">
                   <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-primary/30 relative">
                     <Image
-                      src="/images/ibrahim-avatar.png"
+                      src="/images/waqas-bukhari.webp"
                       alt="Waqas Bukhari"
                       fill
                       className="object-cover"
