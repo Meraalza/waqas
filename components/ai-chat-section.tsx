@@ -581,7 +581,7 @@ export default function AIChatSection() {
             <div className="relative">
               <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/30 glow-effect">
                 <Image
-                  src="/images/ibrahim-avatar.png"
+                  src="/images/waqas-bukhari.webp"
                   alt="Waqas Bukhari"
                   width={96}
                   height={96}
