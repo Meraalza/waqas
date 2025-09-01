@@ -184,7 +184,7 @@ export default function HeroSectionNew() {
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-primary font-medium">👋 Hi, I'm Waqas Mustafa</span>
+                <span className="text-primary font-medium">👋 Hi, I'm Waqas Bukhari</span>
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight">
