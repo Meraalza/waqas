@@ -123,7 +123,7 @@ export default function LoadingScreen() {
               <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/50 relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 animate-pulse" />
                 <Image
-                  src="/images/ibrahim-avatar.png"
+                  src="/images/waqas-bukhari.webp"
                   alt="Ibrahim Mustafa"
                   width={96}
                   height={96}
