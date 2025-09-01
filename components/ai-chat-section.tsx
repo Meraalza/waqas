@@ -216,7 +216,7 @@ export default function AIChatSection() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: false, amount: 0.1 })
   const controls = useAnimation()
 
   const chatContainerRef = useRef<HTMLDivElement>(null)
@@ -399,7 +399,7 @@ export default function AIChatSection() {
   }
 
   return (
-    <section id="ai-chat" className="py-20 md:py-32 relative bg-gradient-to-b from-card/50 to-background z-10">
+    <section id="experience" className="py-20 md:py-32 relative bg-gradient-to-b from-card/50 to-background">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
@@ -412,6 +412,7 @@ export default function AIChatSection() {
           animate={controls}
           variants={containerVariants}
           className="text-center mb-12"
+          style={{ opacity: 1 }}
         >
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Chat with <span className="text-gradient">AI Wiki</span>
@@ -425,13 +426,12 @@ export default function AIChatSection() {
           ></motion.div>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto relative z-10" ref={chatContainerRef}>
+        <div className="max-w-3xl mx-auto" ref={chatContainerRef}>
           <motion.div
             className="glass rounded-2xl overflow-hidden chat-element"
             variants={chatElementVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            style={{ willChange: "transform, opacity" }}
           >
             {/* Chat header */}
             <div className="p-4 border-b border-white/10 flex items-center justify-between bg-card/50">
@@ -455,7 +455,11 @@ export default function AIChatSection() {
             </div>
 
             {/* Chat messages - Fixed height container with internal scrolling */}
-            <div ref={chatMessagesRef} className="h-[400px] overflow-y-auto p-4 space-y-4 scroll-smooth">
+            <div
+              ref={chatMessagesRef}
+              className="h-[400px] overflow-y-auto p-4 space-y-4 scroll-smooth"
+              style={{ scrollBehavior: "smooth" }}
+            >
               {messages.map((message, index) => (
                 <motion.div
                   key={index}
@@ -573,12 +577,11 @@ export default function AIChatSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ willChange: "transform, opacity" }}
           >
             <div className="relative">
               <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/30 glow-effect">
                 <Image
-                  src="/images/waqas-bukhari.webp"
+                  src="/images/ibrahim-avatar.png"
                   alt="Waqas Bukhari"
                   width={96}
                   height={96}
