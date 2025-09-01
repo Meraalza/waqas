@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/waqas-bukhari.webp",
         width: 1200,
         height: 630,
         alt: "Waqas Bukhari - Web & App Developer",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Waqas Bukhari | AI Automation Expert & Web & App Developer",
     description:
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
-    images: ["/images/twitter-card.jpg"],
+    images: ["/images/waqas-bukhari.webp"],
     creator: "@waqasbukhari",
   },
   verification: {
@@ -92,7 +92,7 @@ export default function RootLayout({
               description:
                 "AI Automation Expert specializing in intelligent business solutions, full-stack development, and cutting-edge automation technologies.",
               url: "https://waqasbukhari.vercel.app",
-              image: "https://waqasbukhari.vercel.app/images/ibrahim-avatar.png",
+              image: "https://waqasbukhari.vercel.app/images/waqas-bukhari.webp",
               sameAs: [
                 "https://linkedin.com/in/waqasbukhari",
                 "https://github.com/waqasbukhari",
