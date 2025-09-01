@@ -36,9 +36,9 @@ const blogPosts: Record<string, BlogPost> = {
     title: "The Absolute Zero Revolution: When AI Learns from Nothing",
     excerpt:
       "Exploring the groundbreaking methodology that enables AI models to master complex reasoning tasks without human intervention.",
-    date: "December 2024",
+    date: "August 2025",
     readTime: "8 min",
-    author: "Ibrahim Mustafa",
+    author: "Waqas Bukhari",
     category: {
       name: "AI Research",
       icon: <Brain className="w-3 h-3 mr-1" />,
@@ -199,9 +199,9 @@ const blogPosts: Record<string, BlogPost> = {
     slug: "automation-trends-2025",
     title: "Automation Trends to Watch in 2025",
     excerpt: "The top emerging automation technologies that will transform businesses in the coming year.",
-    date: "November 2024",
+    date: "August 2025",
     readTime: "6 min",
-    author: "Ibrahim Mustafa",
+    author: "Waqas Bukhari",
     category: {
       name: "Automation",
       icon: <Zap className="w-3 h-3 mr-1" />,
@@ -258,9 +258,9 @@ const blogPosts: Record<string, BlogPost> = {
     title: "The Ethics of Self-Improving AI Systems",
     excerpt:
       "Examining the ethical implications and safety concerns of autonomous AI that can enhance its own capabilities.",
-    date: "October 2024",
+    date: "August 2025",
     readTime: "10 min",
-    author: "Ibrahim Mustafa",
+    author: "Waqas Bukhari",
     category: {
       name: "AI Safety",
       icon: <Shield className="w-3 h-3 mr-1" />,
