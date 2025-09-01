@@ -141,11 +141,11 @@ export default function HeroSectionNew() {
           >
             <div className="relative glass rounded-xl p-4 border border-white/10 max-w-xs">
               <div className="w-24 h-24 mx-auto mb-3 rounded-lg overflow-hidden border-2 border-primary/30 relative">
-                <Image src="/images/ibrahim-avatar.png" alt="Ibrahim Mustafa" fill className="object-cover" priority />
+                <Image src="/images/ibrahim-avatar.png" alt="Waqas Bukhari" fill className="object-cover" priority />
               </div>
               <div className="text-center">
                 <h3 className="text-base font-bold mb-1">Waqas Bukhari</h3>
-                <p className="text-primary font-medium text-xs mb-2">AI Automation Expert</p>
+                <p className="text-primary font-medium text-xs mb-2">Web & App Developer</p>
                 <div className="flex items-center justify-center gap-1">
                   <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-xs text-gray-300">Available for projects</span>
@@ -184,7 +184,7 @@ export default function HeroSectionNew() {
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-primary font-medium">👋 Hi, I'm Ibrahim Mustafa</span>
+                <span className="text-primary font-medium">👋 Hi, I'm Waqas Mustafa</span>
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight">
@@ -240,7 +240,7 @@ export default function HeroSectionNew() {
                   <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-primary/30 relative">
                     <Image
                       src="/images/ibrahim-avatar.png"
-                      alt="Ibrahim Mustafa"
+                      alt="Waqas Bukhari"
                       fill
                       className="object-cover"
                       priority
@@ -249,8 +249,8 @@ export default function HeroSectionNew() {
                   </div>
 
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-2">Ibrahim Mustafa</h3>
-                    <p className="text-primary font-medium mb-4">AI Automation Expert</p>
+                    <h3 className="text-2xl font-bold mb-2">Waqas Bukhari</h3>
+                    <p className="text-primary font-medium mb-4">Web & App Developer</p>
 
                     {/* Status Indicator */}
                     <div className="flex items-center justify-center gap-2 mb-6">
