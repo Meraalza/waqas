@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waqas Bukhari | AI Automation Expert & Web & App Developer",
+    title: "Waqas Bukhari | AI Automation Expert - Web & App Developer",
     description:
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
     images: ["/images/waqas-bukhari.webp"],
@@ -118,6 +118,35 @@ export default function RootLayout({
                 "@type": "PostalAddress",
                 addressCountry: "Pakistan",
               },
+            }),
+          }}
+        />
+        {/* Website Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Waqas Bukhari - Web & App Developer",
+              url: "https://waqasbukhari.vercel.app",
+              description: "Portfolio of Waqas Bukhari, AI Automation Expert specializing in intelligent business solutions, full-stack development, and cutting-edge automation technologies.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://waqasbukhari.vercel.app/search?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              author: {
+                "@type": "Person",
+                name: "Waqas Bukhari"
+              },
+              publisher: {
+                "@type": "Person",
+                name: "Waqas Bukhari"
+              }
             }),
           }}
         />
