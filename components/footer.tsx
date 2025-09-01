@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Whatsapp } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -18,13 +18,13 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4">
                 <motion.a
-                  href="#"
+                  href="https://api.whatsapp.com/send?phone=923402324446"
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className="p-2 rounded-full bg-card/50 hover:bg-card transition-colors"
-                  aria-label="Github"
+                  aria-label="Whatsapp"
                 >
-                  <Github size={20} />
+                  <Whatsapp size={20} />
                 </motion.a>
                 <motion.a
                   href="#"
@@ -34,25 +34,7 @@ export default function Footer() {
                   aria-label="Twitter"
                 >
                   <Twitter size={20} />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-full bg-card/50 hover:bg-card transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-full bg-card/50 hover:bg-card transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                </motion.a>
+                </motion.a>                
               </div>
             </div>
 
