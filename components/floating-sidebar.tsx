@@ -74,7 +74,7 @@ export default function FloatingSidebar() {
               <div className="container mx-auto px-6 py-4">
                 <div className="flex justify-between items-center">
                   <Link href="#home" className="text-2xl font-heading font-bold">
-                    <span className="text-gradient">Ibrahim</span>
+                    <span className="text-gradient">Waqas</span>
                   </Link>
 
                   <div className="flex items-center space-x-8">
@@ -139,7 +139,7 @@ export default function FloatingSidebar() {
                   className="text-center mb-2"
                 >
                   <Link href="#home" className="text-lg font-heading font-bold">
-                    <span className="text-gradient">IM</span>
+                    <span className="text-gradient">WB</span>
                   </Link>
                 </motion.div>
 
