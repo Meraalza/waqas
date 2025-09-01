@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Waqas Bukhari, AI Automation Expert specializing in intelligent business solutions, full-stack development, and cutting-edge automation technologies. Transform your business with AI-powered solutions.",
   keywords: [
+    "WordPress Developer",
+    "Google Business",
+    "Web Application Developer",
     "AI Automation",
-    "Full-Stack Developer",
-    "Business Automation",
-    "Machine Learning",
     "Web Development",
     "React",
     "Next.js",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://waqasbukhari.dev",
-    siteName: "Waqas Bukhari - AI Automation Expert",
+    url: "https://waqasbukhari.vercel.app",
+    siteName: "Waqas Bukhari - Web & App Developer",
     title: "Waqas Bukhari | AI Automation Expert & Full-Stack Developer",
     description:
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Waqas Bukhari - AI Automation Expert",
+        alt: "Waqas Bukhari - Web & App Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waqas Bukhari | AI Automation Expert & Full-Stack Developer",
+    title: "Waqas Bukhari | AI Automation Expert & Web & App Developer",
     description:
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
     images: ["/images/twitter-card.jpg"],
@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://waqasbukhari.dev",
+    canonical: "https://waqasbukhari.vercel.app",
   },
   category: "Technology",
-    generator: 'v0.app'
+    generator: 'Waqas Bukhari'
 }
 
 export default function RootLayout({
@@ -91,18 +91,19 @@ export default function RootLayout({
               jobTitle: "AI Automation Expert & Full-Stack Developer",
               description:
                 "AI Automation Expert specializing in intelligent business solutions, full-stack development, and cutting-edge automation technologies.",
-              url: "https://waqasbukhari.dev",
-              image: "https://waqasbukhari.dev/images/ibrahim-avatar.png",
+              url: "https://waqasbukhari.vercel.app",
+              image: "https://waqasbukhari.vercel.app/images/ibrahim-avatar.png",
               sameAs: [
                 "https://linkedin.com/in/waqasbukhari",
                 "https://github.com/waqasbukhari",
                 "https://twitter.com/waqasbukhari",
               ],
               knowsAbout: [
-                "Artificial Intelligence",
-                "Machine Learning",
-                "Business Automation",
-                "Full-Stack Development",
+                "WordPress Developer",
+                "Google Business",
+                "Web Application Developer",
+                "AI Automation",
+                "Web Development",
                 "React",
                 "Next.js",
                 "TypeScript",
@@ -111,11 +112,11 @@ export default function RootLayout({
               ],
               worksFor: {
                 "@type": "Organization",
-                name: "Freelance AI Consultant",
+                name: "Freelance Web Developer",
               },
               address: {
                 "@type": "PostalAddress",
-                addressCountry: "US",
+                addressCountry: "Pakistan",
               },
             }),
           }}
@@ -123,7 +124,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#fc52ff" />
         <meta name="msapplication-TileColor" content="#fc52ff" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <link rel="canonical" href="https://waqasbukhari.dev" />
+        <link rel="canonical" href="https://waqasbukhari.vercel.app" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
