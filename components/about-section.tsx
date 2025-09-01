@@ -76,7 +76,7 @@ export default function AboutSection() {
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0">
                   <Image
-                    src="/images/ibrahim-avatar.png"
+                    src="/images/waqas-bukhari.webp"
                     alt="Ibrahim Mustafa"
                     width={96}
                     height={96}
