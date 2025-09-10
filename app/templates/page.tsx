@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { X } from "lucide-react"
+import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 // Define image item type
 interface GalleryImage {
@@ -18,6 +18,8 @@ interface GalleryImage {
 }
 
 export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+
   const galleryImages: GalleryImage[] = [
     {
       id: "img-1",
@@ -141,6 +143,16 @@ export default function GalleryPage() {
     },
   ]
 
+  const openModal = (image: GalleryImage) => {
+    setSelectedImage(image)
+    document.body.style.overflow = "hidden" // Prevent background scroll
+  }
+
+  const closeModal = () => {
+    setSelectedImage(null)
+    document.body.style.overflow = "unset"
+  }
+
   return (
     <div className="min-h-screen bg-[#0a0a0f] relative overflow-hidden">
       {/* Background Effects */}
@@ -178,41 +190,29 @@ export default function GalleryPage() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="h-full"
             >
-              <Link href={`/gallery/${image.id}`} className="block h-full">
-                <Card
-                  className="glass h-full overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20"
-                >
-                  {/* Image Container */}
-                  <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl"> {/* 16:9 Aspect */}
-                    <img
-                      src={image.imageUrl}
-                      alt={image.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                    />
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    {/* Category Badge */}
-                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium bg-${image.color}-500/20 text-${image.color}-300 border border-${image.color}-500/30`}>
-                      {image.category}
-                    </div>
+              <Card
+                onClick={() => openModal(image)}
+                className="glass h-full overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20"
+              >
+                {/* Image Container */}
+                <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl"> {/* 16:9 Aspect */}
+                  <img
+                    src={image.imageUrl}
+                    alt={image.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  {/* Category Badge */}
+                  <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium bg-${image.color}-500/20 text-${image.color}-300 border border-${image.color}-500/30`}>
+                    {image.category}
                   </div>
-
-                  {/* Content */}
-                  <div className="p-5 bg-gradient-to-t from-gray-900/90 to-transparent">
-                    <h3 className="text-lg font-bold text-white mb-2">{image.title}</h3>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">{image.description}</p>
-                    <div className="flex justify-end">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-purple-400 hover:text-purple-300 p-0 h-auto text-xs"
-                      >
-                        View <ArrowRight className="w-3 h-3 ml-1" />
-                      </Button>
-                    </div>
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
+                    <h3 className="text-lg font-bold text-white">{image.title}</h3>
                   </div>
-                </Card>
-              </Link>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -225,20 +225,48 @@ export default function GalleryPage() {
           className="mt-16 text-center"
         >
           <Card className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/30">
-            <CardContent className="p-8">
+            <div className="p-8"> {/* Removed CardContent */}
               <h3 className="text-2xl font-bold text-white mb-4">Inspired? Create Your Own Gallery</h3>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                 Use our AI tools to generate, curate, and publish your own visual masterpieces.
               </p>
-              <Link href="/create">
-                <Button className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white">
-                  Start Creating
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </CardContent>
+              <Button
+                onClick={() => (window.location.href = "/create")}
+                className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
+              >
+                Start Creating
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
           </Card>
         </motion.div>
+
+        {/* Modal */}
+        {selectedImage && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={closeModal}>
+            <div className="relative max-w-4xl max-h-full" onClick={(e) => e.stopPropagation()}>
+              <button
+                onClick={closeModal}
+                className="absolute -top-12 right-0 text-white hover:text-gray-300"
+                aria-label="Close modal"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <img
+                src={selectedImage.imageUrl}
+                alt={selectedImage.title}
+                className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              />
+              <div className="mt-4 text-center text-white">
+                <h3 className="text-2xl font-bold">{selectedImage.title}</h3>
+                <p className="text-gray-300 mt-2">{selectedImage.description}</p>
+                <span className={`inline-block mt-3 px-3 py-1 rounded-full text-xs font-medium bg-${selectedImage.color}-500/30 text-${selectedImage.color}-300`}>
+                  {selectedImage.category}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
