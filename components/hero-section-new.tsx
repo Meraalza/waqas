@@ -212,7 +212,7 @@ export default function HeroSectionNew() {
                 className="flex flex-wrap gap-4"
               >
                 <motion.a
-                  href="#contact"
+                  href="https://wa.me/923402324446"
                   className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-medium text-white hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
