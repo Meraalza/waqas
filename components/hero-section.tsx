@@ -89,7 +89,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <AnimatedText
-                text="AI Automation Expert"
+                text="WordPress & AI Integration Developer"
                 className="text-xl md:text-2xl font-medium text-secondary mb-4"
                 delay={300}
               />
