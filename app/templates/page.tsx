@@ -3,7 +3,7 @@
 import type React from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -23,7 +23,7 @@ export default function GalleryPage() {
       id: "img-1",
       title: "Neon Metropolis",
       description: "Futuristic cityscape glowing under neon lights and digital rain.",
-      imageUrl: "/images/neon-metropolis.jpg",
+      imageUrl: "/templates/1.PNG",
       category: "Digital Art",
       color: "purple",
     },
@@ -31,7 +31,7 @@ export default function GalleryPage() {
       id: "img-2",
       title: "Quantum Forest",
       description: "Surreal woodland where trees emit quantum particles and glow with energy.",
-      imageUrl: "/images/quantum-forest.jpg",
+      imageUrl: "/templates/2.PNG",
       category: "Concept Art",
       color: "cyan",
     },
@@ -39,7 +39,7 @@ export default function GalleryPage() {
       id: "img-3",
       title: "Cyber Samurai",
       description: "A lone warrior clad in nano-armor, standing atop a datastream cliff.",
-      imageUrl: "/images/cyber-samurai.jpg",
+      imageUrl: "/templates/3.PNG",
       category: "Character Design",
       color: "red",
     },
@@ -47,7 +47,7 @@ export default function GalleryPage() {
       id: "img-4",
       title: "Zero Gravity Garden",
       description: "Floating flora in orbital station, illuminated by distant stars.",
-      imageUrl: "/images/zero-gravity-garden.jpg",
+      imageUrl: "/templates/4.PNG",
       category: "Sci-Fi",
       color: "green",
     },
