@@ -178,7 +178,7 @@ export default function GalleryPage() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="h-full"
             >
-              <Link href={`/gallery/${image.id}`} className="block h-full">
+              <Link href={`/templates/${image.url}`} className="block h-full">
                 <Card
                   className="glass h-full overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20"
                 >
