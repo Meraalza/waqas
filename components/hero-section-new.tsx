@@ -101,7 +101,7 @@ export default function HeroSectionNew() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl sm:text-3xl font-heading font-bold leading-tight"
           >
-            <span className="block">WORDPRESS</span>
+            <span className="block">WORDPRESS &</span>
             <span className="block text-gradient">AI INTEGRATION</span>
             <span className="block italic text-secondary">EXPERT</span>
           </motion.h1>
@@ -188,7 +188,7 @@ export default function HeroSectionNew() {
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight">
-                <span className="block">WORDPRESS</span>
+                <span className="block">WORDPRESS &</span>
                 <span className="block text-gradient">AI INTEGRATION</span>
                 <span className="block italic text-secondary">EXPERT</span>
               </h1>
