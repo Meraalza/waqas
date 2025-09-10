@@ -199,9 +199,9 @@ export default function HeroSectionNew() {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 className="text-xl text-gray-300 max-w-lg leading-relaxed mb-12"
               >
-                Transforming businesses through intelligent automation.
+                Transforming businesses through intelligent website automation.
                 <span className="text-primary font-medium"> 7+ years</span> of experience in
-                <span className="text-secondary font-medium"> AI development</span> and
+                <span className="text-secondary font-medium"> WordPress development,</span> AI-powered functionality, and
                 <span className="text-accent font-medium"> process optimization</span>.
               </motion.p>
 
