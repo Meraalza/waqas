@@ -102,8 +102,8 @@ export default function HeroSectionNew() {
             className="text-2xl sm:text-3xl font-heading font-bold leading-tight"
           >
             <span className="block">AN</span>
-            <span className="block text-gradient">AI AUTOMATION</span>
-            <span className="block italic text-secondary">EXPERT</span>
+            <span className="block text-gradient">WORDPRESS & AI INTEGRATION</span>
+            <span className="block italic text-secondary">DEVELOPER</span>
           </motion.h1>
 
           <motion.p
