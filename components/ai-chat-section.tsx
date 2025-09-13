@@ -35,7 +35,7 @@ const experienceResponses = [
 const skillsResponses = [
   {
     role: "assistant",
-    content: `Ibrahim specializes in:
+    content: `Waqas specializes in:
 
 **AI Development** - Building intelligent systems with ML/DL
 **Process Automation** - Creating efficient workflows
