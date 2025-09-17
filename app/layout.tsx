@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
     images: [
       {
-        url: "/images/waqas-bukhari.webp",
+        url: "/images/card.png",
         width: 1200,
         height: 630,
         alt: "Waqas Bukhari - Web & App Developer",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Waqas Bukhari | AI Automation Expert - Web & App Developer",
     description:
       "Transform your business with AI-powered automation solutions. Expert in full-stack development, machine learning, and intelligent business systems.",
-    images: ["/images/waqas-bukhari.webp"],
+    images: ["/images/card.png"],
     creator: "@waqasbukhari",
   },
   verification: {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://waqasbukhari.vercel.app",
   },
-  category: "Technology",
+  category: "Web Development",
     generator: 'Waqas Bukhari'
 }
 
