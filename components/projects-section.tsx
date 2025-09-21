@@ -37,7 +37,7 @@ const projects = [
     color: "from-purple-500/20 to-blue-500/20",
   },
   {
-    title: "eBike & Accessories Affiliate Website",
+    title: "eBikes & Accessories Affiliate Website",
     description:
       "An affiliate marketing website specializing in electric bikes and related accessories with comprehensive product reviews and recommendations.",
     longDescription:
