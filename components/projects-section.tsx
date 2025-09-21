@@ -58,7 +58,7 @@ const projects = [
     longDescription:
       "This portfolio website features a clean, modern design that effectively showcases professional work and skills. It includes project galleries, skill assessments, contact forms, and responsive design that works seamlessly across all devices.",
     tags: ["Web Design", "Portfolio", "Responsive", "UI/UX"],
-    image: "/images/portfolio22.png",
+    image: "/images/portfolio22.PNG",
     links: {
       demo: "https://waqasbukhari.vercel.app/",
       github: "#",
