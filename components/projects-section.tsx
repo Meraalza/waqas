@@ -15,7 +15,7 @@ const projects = [
     tags: ["React", "Node.js", "AdSense API", "Revenue Analytics"],
     image: "/images/adsense.png",
     links: {
-      demo: "#",
+      demo: "https://informi.online/",
       github: "#",
     },
     features: ["Revenue Calculator", "Ad Unit Generator", "Compliance Checker", "Placement Optimizer"],
@@ -30,7 +30,7 @@ const projects = [
     tags: ["JavaScript", "Utility Tools", "Data Processing", "Web Development"],
     image: "/images/devbuddy.png",
     links: {
-      demo: "#",
+      demo: "https://devbuddy.online/",
       github: "#",
     },
     features: ["Code Utilities", "Data Tools", "Formatting", "Conversion Tools"],
@@ -45,7 +45,7 @@ const projects = [
     tags: ["E-commerce", "Affiliate Marketing", "Product Reviews", "WordPress"],
     image: "/images/ebikes.PNG",
     links: {
-      demo: "#",
+      demo: "https://ebikers.site/",
       github: "#",
     },
     features: ["Product Catalog", "Reviews", "Affiliate Links", "Buying Guides"],
@@ -60,7 +60,7 @@ const projects = [
     tags: ["Web Design", "Portfolio", "Responsive", "UI/UX"],
     image: "/images/portfolio22.png",
     links: {
-      demo: "#",
+      demo: "https://waqasbukhari.vercel.app/",
       github: "#",
     },
     features: ["Project Showcase", "Skills Display", "Contact Form", "Responsive Design"],
@@ -75,7 +75,7 @@ const projects = [
     tags: ["Travel", "Booking System", "Destination Guides", "E-commerce"],
     image: "/images/travel.PNG",
     links: {
-      demo: "#",
+      demo: "https://dev-globetrekker.pantheonsite.io/",
       github: "#",
     },
     features: ["Destination Guides", "Booking System", "Travel Planning", "Itinerary Builder"],
