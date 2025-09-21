@@ -13,7 +13,7 @@ const projects = [
     longDescription:
       "Adsense Revenue Calculator is a complete suite of tools for publishers to maximize their advertising revenue. Features include accurate revenue projections, ad code generation, policy compliance checking, placement optimization recommendations, and automatic ads.txt file generation.",
     tags: ["React", "Node.js", "AdSense API", "Revenue Analytics"],
-    image: "/images/projects/task-management-app.png",
+    image: "/images/adsense.png",
     links: {
       demo: "#",
       github: "#",
@@ -28,7 +28,7 @@ const projects = [
     longDescription:
       "Code & Data Tools provides a comprehensive set of utility tools for developers to streamline their workflow. The platform offers various code formatting, data conversion, and processing tools to enhance developer productivity and efficiency.",
     tags: ["JavaScript", "Utility Tools", "Data Processing", "Web Development"],
-    image: "/images/projects/business-software.webp",
+    image: "/images/devbuddy.png",
     links: {
       demo: "#",
       github: "#",
@@ -43,7 +43,7 @@ const projects = [
     longDescription:
       "This affiliate website provides detailed reviews, comparisons, and recommendations for electric bikes and accessories. It features product catalogs, buying guides, affiliate links, and user-friendly navigation to help customers make informed purchasing decisions.",
     tags: ["E-commerce", "Affiliate Marketing", "Product Reviews", "WordPress"],
-    image: "/images/projects/habit-tracker.png",
+    image: "/images/ebikes.PNG",
     links: {
       demo: "#",
       github: "#",
@@ -58,7 +58,7 @@ const projects = [
     longDescription:
       "This portfolio website features a clean, modern design that effectively showcases professional work and skills. It includes project galleries, skill assessments, contact forms, and responsive design that works seamlessly across all devices.",
     tags: ["Web Design", "Portfolio", "Responsive", "UI/UX"],
-    image: "/images/projects/film-finder.png",
+    image: "/images/portfolio22.png",
     links: {
       demo: "#",
       github: "#",
@@ -73,7 +73,7 @@ const projects = [
     longDescription:
       "This travel website provides users with destination guides, booking capabilities, travel planning tools, and recommendations. It features interactive maps, accommodation booking, flight search, and personalized travel itineraries for seamless trip planning.",
     tags: ["Travel", "Booking System", "Destination Guides", "E-commerce"],
-    image: "/images/projects/ai-automation.png",
+    image: "/images/travel.PNG",
     links: {
       demo: "#",
       github: "#",
