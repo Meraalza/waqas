@@ -7,78 +7,78 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "TaskFlow - Productivity App",
+    title: "Adsense Revenue Calculator",
     description:
-      "A comprehensive mobile task management and productivity tracking app with gamification elements, rewards system, and detailed analytics.",
+      "A comprehensive tool that includes Revenue Calculator, Ad Unit Code Generator, Policy Compliance Checker, Ad Placement Optimizer, and Ads.txt Generator.",
     longDescription:
-      "TaskFlow is a modern productivity app that combines task management with gamification to keep users motivated. Features include daily task tracking, reward systems, productivity analytics, and social ranking features to encourage consistent habits.",
-    tags: ["React Native", "Node.js", "MongoDB", "Gamification"],
+      "Adsense Revenue Calculator is a complete suite of tools for publishers to maximize their advertising revenue. Features include accurate revenue projections, ad code generation, policy compliance checking, placement optimization recommendations, and automatic ads.txt file generation.",
+    tags: ["React", "Node.js", "AdSense API", "Revenue Analytics"],
     image: "/images/projects/task-management-app.png",
     links: {
       demo: "#",
       github: "#",
     },
-    features: ["Task Management", "Reward System", "Progress Tracking", "Social Rankings"],
+    features: ["Revenue Calculator", "Ad Unit Generator", "Compliance Checker", "Placement Optimizer"],
     color: "from-blue-500/20 to-purple-500/20",
   },
   {
-    title: "OneSoft - Business Platform",
+    title: "Code & Data Tools",
     description:
-      "An all-in-one business software platform integrating calendar, chat, CRM, and ERP functionalities for streamlined business operations.",
+      "A collection of utility tools for developers including various code and data processing utilities.",
     longDescription:
-      "OneSoft is a comprehensive business management platform that unifies essential business tools into one seamless experience. It includes calendar management, team communication, customer relationship management, and enterprise resource planning modules.",
-    tags: ["React", "Node.js", "PostgreSQL", "Microservices"],
+      "Code & Data Tools provides a comprehensive set of utility tools for developers to streamline their workflow. The platform offers various code formatting, data conversion, and processing tools to enhance developer productivity and efficiency.",
+    tags: ["JavaScript", "Utility Tools", "Data Processing", "Web Development"],
     image: "/images/projects/business-software.webp",
     links: {
       demo: "#",
       github: "#",
     },
-    features: ["Integrated Calendar", "Team Chat", "CRM System", "ERP Module"],
+    features: ["Code Utilities", "Data Tools", "Formatting", "Conversion Tools"],
     color: "from-purple-500/20 to-blue-500/20",
   },
   {
-    title: "HabitFlow - Wellness Tracker",
+    title: "eBike & Accessories Affiliate Website",
     description:
-      "A beautiful habit tracking application that helps users build and maintain daily routines with intuitive progress visualization.",
+      "An affiliate marketing website specializing in electric bikes and related accessories with comprehensive product reviews and recommendations.",
     longDescription:
-      "HabitFlow makes habit building enjoyable with its clean interface and comprehensive tracking features. Users can set goals, track progress, and visualize their journey towards better habits with detailed analytics and motivational insights.",
-    tags: ["Flutter", "Firebase", "Analytics", "UI/UX"],
+      "This affiliate website provides detailed reviews, comparisons, and recommendations for electric bikes and accessories. It features product catalogs, buying guides, affiliate links, and user-friendly navigation to help customers make informed purchasing decisions.",
+    tags: ["E-commerce", "Affiliate Marketing", "Product Reviews", "WordPress"],
     image: "/images/projects/habit-tracker.png",
     links: {
       demo: "#",
       github: "#",
     },
-    features: ["Habit Tracking", "Progress Analytics", "Goal Setting", "Visual Reports"],
+    features: ["Product Catalog", "Reviews", "Affiliate Links", "Buying Guides"],
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
-    title: "Film Fan Finder",
+    title: "Portfolio Website",
     description:
-      "An intelligent movie recommendation platform that helps users discover films based on their preferences and viewing history.",
+      "A professional portfolio website showcasing projects, skills, and experience with modern design and responsive layout.",
     longDescription:
-      "Film Fan Finder uses advanced recommendation algorithms to suggest movies tailored to individual tastes. The platform analyzes viewing patterns, ratings, and preferences to provide personalized movie recommendations with detailed information and reviews.",
-    tags: ["React", "Python", "Machine Learning", "API Integration"],
+      "This portfolio website features a clean, modern design that effectively showcases professional work and skills. It includes project galleries, skill assessments, contact forms, and responsive design that works seamlessly across all devices.",
+    tags: ["Web Design", "Portfolio", "Responsive", "UI/UX"],
     image: "/images/projects/film-finder.png",
     links: {
       demo: "#",
       github: "#",
     },
-    features: ["AI Recommendations", "Movie Database", "User Profiles", "Review System"],
+    features: ["Project Showcase", "Skills Display", "Contact Form", "Responsive Design"],
     color: "from-purple-500/20 to-pink-500/20",
   },
   {
-    title: "AI Automation Consultant",
+    title: "Travel website",
     description:
-      "A sophisticated AI-powered automation platform that provides intelligent solutions for business process optimization and workflow automation.",
+      "A comprehensive travel platform offering destination information, booking services, and travel planning tools.",
     longDescription:
-      "This AI automation platform serves as a virtual consultant, helping businesses identify automation opportunities and implement intelligent workflows. It features conversation-based interaction, solution recommendations, and automated process analysis.",
-    tags: ["AI/ML", "Python", "React", "Natural Language Processing"],
+      "This travel website provides users with destination guides, booking capabilities, travel planning tools, and recommendations. It features interactive maps, accommodation booking, flight search, and personalized travel itineraries for seamless trip planning.",
+    tags: ["Travel", "Booking System", "Destination Guides", "E-commerce"],
     image: "/images/projects/ai-automation.png",
     links: {
       demo: "#",
       github: "#",
     },
-    features: ["AI Consultation", "Process Analysis", "Workflow Automation", "Smart Recommendations"],
+    features: ["Destination Guides", "Booking System", "Travel Planning", "Itinerary Builder"],
     color: "from-cyan-500/20 to-emerald-500/20",
   },
 ]
