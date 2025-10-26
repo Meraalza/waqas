@@ -10,7 +10,6 @@ import Image from "next/image"
 // Predefined chat messages
 const initialMessages = [
   {
-    role: "assistant",
     content: "👋 Hi there! I'm AI Chat Bot, your virtual assistant. Ask me about waqas's work experience or skills!",
   },
 ]
