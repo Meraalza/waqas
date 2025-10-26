@@ -65,23 +65,22 @@ Each project demonstrates his expertise in creating user-friendly, AI-powered so
 
 const aiDevelopmentResponses = [
   {
-    role: "assistant",
-    content: `Excellent choice! Waqas's AI development services include:
+    "content": `Waqas has built several innovative projects:
 
-**Machine Learning Models** - Custom ML solutions for your specific needs
-**Neural Networks** - Deep learning implementations for complex problems
-**Computer Vision** - Image and video analysis capabilities
-**Natural Language Processing** - Text analysis and language understanding
-**Predictive Analytics** - Forecasting and trend analysis systems
+**Video to Gif Converter Web App** - CSR Next.js application for creating GIFs from videos
+https://makegifs.online/
 
-**Technologies Used:**
-• Python, TensorFlow, PyTorch
-• OpenAI GPT, Google Gemini
-• AWS SageMaker, Azure ML
-• Custom model training and deployment
+**Premium Electric Bikes Affiliate Website** - E-commerce affiliate site for electric bikes
+https://ecobikes.vercel.app/
 
-Would you like to discuss a specific AI project for your business?`,
-  },
+**Adsense Tools for Maximize Ad Revenue** - Toolkit for optimizing Google Adsense revenue
+https://informi.vercel.app/
+
+**Development Productivity Toolkit** - Ultimate toolkit for developer productivity
+https://www.devbuddy.online/
+
+Each project demonstrates his expertise in creating practical, user-focused web applications using modern technologies.`
+  }
 ]
 
 const processAutomationResponses = [
