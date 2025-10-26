@@ -200,7 +200,7 @@ export default function HeroSectionNew() {
                 className="text-xl text-gray-300 max-w-lg leading-relaxed mb-12"
               >
                 Transforming businesses through intelligent website automation.
-                <span className="text-primary font-medium"> 7+ years</span> of experience in
+                <span className="text-primary font-medium"> 3+ years</span> of experience in
                 <span className="text-secondary font-medium"> WordPress development,</span> AI-powered functionality, and
                 <span className="text-accent font-medium"> process optimization</span>.
               </motion.p>
@@ -270,7 +270,7 @@ export default function HeroSectionNew() {
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">18+</div>
+                  <div className="text-2xl font-bold text-primary">22+</div>
                   <div className="text-xs text-gray-400">AI Projects</div>
                 </div>
               </motion.div>
@@ -296,7 +296,7 @@ export default function HeroSectionNew() {
                 whileHover={{ scale: 1.05, rotate: 3 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent">7+</div>
+                  <div className="text-2xl font-bold text-accent">3+</div>
                   <div className="text-xs text-gray-400">Years Exp</div>
                 </div>
               </motion.div>
