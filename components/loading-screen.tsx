@@ -172,7 +172,7 @@ export default function LoadingScreen() {
                 },
               }}
             >
-              Initializing AI Automation...
+              Initializing Portfolio...
             </motion.div>
           </div>
 
