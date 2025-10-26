@@ -45,22 +45,22 @@ const projects = [
     tags: ["E-commerce", "Affiliate Marketing", "Product Reviews", "WordPress"],
     image: "/images/ebikes.PNG",
     links: {
-      demo: "https://ebikers.site/",
+      demo: "https://ecobikes.vercel.app/",
       github: "#",
     },
     features: ["Product Catalog", "Reviews", "Affiliate Links", "Buying Guides"],
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
-    title: "Portfolio Website",
+    title: "Video To GIF Converter",
     description:
-      "A professional portfolio website showcasing projects, skills, and experience with modern design and responsive layout.",
+      "Convert Videos into high-quality animated GIFs instantly.",
     longDescription:
-      "This portfolio website features a clean, modern design that effectively showcases professional work and skills. It includes project galleries, skill assessments, contact forms, and responsive design that works seamlessly across all devices.",
-    tags: ["Web Design", "Portfolio", "Responsive", "UI/UX"],
+      "Transform your videos into high-quality animated GIFs instantly. No uploads, no registration, no limits - just pure conversion power in your browser.",
+    tags: ["Web Design", "Online Tool", "Responsive", "UI/UX"],
     image: "/images/portfolio22.PNG",
     links: {
-      demo: "https://waqasbukhari.vercel.app/",
+      demo: "https://makegifs.online/",
       github: "#",
     },
     features: ["Project Showcase", "Skills Display", "Contact Form", "Responsive Design"],
