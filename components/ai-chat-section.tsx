@@ -49,17 +49,22 @@ He's proficient with tools like WordPress, Next.js, React, Google Search Console
 
 const projectResponses = [
   {
-    role: "assistant",
-    content: `Waqas has built several innovative projects:
+    "content": `Waqas has built several innovative projects:
 
-**TaskFlow** - Productivity app with gamification
-**OneSoft** - All-in-one business platform
-**HabitFlow** - Wellness and habit tracking app
-**Film Fan Finder** - AI movie recommendation system
-**AI Automation Consultant** - Intelligent workflow automation
+**Video to Gif Converter Web App** - CSR Next.js application for creating GIFs from videos
+https://makegifs.online/
 
-Each project demonstrates his expertise in creating user-friendly, AI-powered solutions.`,
-  },
+**Premium Electric Bikes Affiliate Website** - E-commerce affiliate site for electric bikes
+https://ecobikes.vercel.app/
+
+**Adsense Tools for Maximize Ad Revenue** - Toolkit for optimizing Google Adsense revenue
+https://informi.vercel.app/
+
+**Development Productivity Toolkit** - Ultimate toolkit for developer productivity
+https://www.devbuddy.online/
+
+Each project demonstrates his expertise in creating practical, user-focused web applications using modern technologies.`
+  }
 ]
 
 const aiDevelopmentResponses = [
