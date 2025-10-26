@@ -10,10 +10,10 @@ const experiences = [
     "description": "Freelance Web Developer specializing in WordPress development, AI-powered online tools, business websites, and affiliate marketing sites with strong SEO optimization and Google Search Console expertise.",
     "achievements": [
       "3+ Years of comprehensive freelance web development experience",
-      "Successfully delivered 22 AI-integrated Next.js projects for diverse clients",
-      "Developed and optimized 50+ WordPress websites with custom functionality",
+      "Successfully Created 22+ AI Created Next.js projects",
+      "Developed and optimized WordPress websites with custom functionality",
       "Built 15+ AI-powered online tools and applications driving significant user engagement",
-      "Created and scaled 12+ affiliate websites with proven revenue generation",
+      "Created and scaled affiliate websites",
       "Implemented SEO strategies resulting in 40% average organic traffic growth",
       "Managed Google Search Console for 30+ client websites with continuous performance monitoring",
       "Conducted keyword research leading to top 3 rankings for 100+ competitive terms"
@@ -21,13 +21,13 @@ const experiences = [
     "technologies": ["WordPress", "Next.js", "React", "AI/ML Integration", "SEO", "Google Search Console", "Google Analytics", "Keyword Research Tools", "PHP", "JavaScript", "REST APIs", "Headless CMS"]
   },
   {
-    "period": "2019 - 2021",
-    "description": "Web Development Specialist focusing on WordPress solutions and early AI tool implementations.",
+    "period": "2020 - 2021",
+    "description": "Web Development focusing on WordPress solutions and early AI tool implementations.",
     "achievements": [
-      "Developed 25+ custom WordPress themes and plugins",
+      "Customized 7+ custom WordPress themes and plugins",
       "Built first generation of AI-powered web tools and applications",
       "Established foundational SEO and keyword research methodologies",
-      "Managed technical SEO audits and implementations for e-commerce sites"
+      "Managed technical SEO implementations for e-commerce sites"
     ],
     "technologies": ["WordPress", "PHP", "JavaScript", "Basic AI Integration", "SEO Fundamentals", "Google Analytics"]
   }
