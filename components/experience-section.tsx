@@ -23,10 +23,10 @@ const experiences = [
     "period": "2022 - 2023",
     "description": "Web Development focusing on WordPress solutions and early AI tool implementations.",
     "achievements": [
-      "Customized 7+ custom WordPress themes and plugins",
+      "Customized 7+ custom WordPress plugins",
       "Built first generation of AI-powered web tools and applications",
       "Established foundational SEO and keyword research methodologies",
-      "Managed technical SEO implementations for e-commerce sites"
+      "Managed technical SEO implementations for Websites"
     ],
     "technologies": ["WordPress", "PHP", "JavaScript", "Basic AI Integration", "SEO Fundamentals", "Google Analytics"]
   }
