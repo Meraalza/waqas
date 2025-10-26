@@ -58,7 +58,7 @@ const projects = [
     longDescription:
       "Transform your videos into high-quality animated GIFs instantly. No uploads, no registration, no limits - just pure conversion power in your browser.",
     tags: ["Web Design", "Online Tool", "Responsive", "UI/UX"],
-    image: "/images/portfolio22.PNG",
+    image: "/images/video-to-gif.PNG",
     links: {
       demo: "https://makegifs.online/",
       github: "#",
