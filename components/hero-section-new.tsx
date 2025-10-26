@@ -156,7 +156,7 @@ export default function HeroSectionNew() {
             {/* Mobile Stats - Compact */}
             <div className="flex justify-center gap-2 mt-4">
               <div className="glass rounded-lg p-2 border border-white/10 text-center">
-                <div className="text-sm font-bold text-primary">150+</div>
+                <div className="text-sm font-bold text-primary">84+</div>
                 <div className="text-xs text-gray-400">Projects</div>
               </div>
               <div className="glass rounded-lg p-2 border border-white/10 text-center">
@@ -270,7 +270,7 @@ export default function HeroSectionNew() {
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">150+</div>
+                  <div className="text-2xl font-bold text-primary">18+</div>
                   <div className="text-xs text-gray-400">AI Projects</div>
                 </div>
               </motion.div>
