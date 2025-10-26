@@ -6,22 +6,21 @@ import anime from "animejs"
 
 const experiences = [
   {
-    "period": "2021 - Present",
+    "period": "2023 - Present",
     "description": "Freelance Web Developer specializing in WordPress development, AI-powered online tools, business websites, and affiliate marketing sites with strong SEO optimization and Google Search Console expertise.",
     "achievements": [
-      "3+ Years of comprehensive freelance web development experience",
-      "Successfully Created 22+ AI Created Next.js projects",
+      "3+ Years of comprehensive web development experience",      
       "Developed and optimized WordPress websites with custom functionality",
       "Built 15+ AI-powered online tools and applications driving significant user engagement",
       "Created and scaled affiliate websites",
-      "Implemented SEO strategies resulting in 40% average organic traffic growth",
-      "Managed Google Search Console for 30+ client websites with continuous performance monitoring",
-      "Conducted keyword research leading to top 3 rankings for 100+ competitive terms"
+      "Implemented SEO strategies resulting in organic traffic growth",
+      "Managed Google Search Console for websites with continuous performance monitoring",
+      "Conducted keyword research leading to top competitive terms"
     ],
     "technologies": ["WordPress", "Next.js", "React", "AI/ML Integration", "SEO", "Google Search Console", "Google Analytics", "Keyword Research Tools", "PHP", "JavaScript", "REST APIs", "Headless CMS"]
   },
   {
-    "period": "2020 - 2021",
+    "period": "2022 - 2023",
     "description": "Web Development focusing on WordPress solutions and early AI tool implementations.",
     "achievements": [
       "Customized 7+ custom WordPress themes and plugins",
