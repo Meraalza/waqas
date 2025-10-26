@@ -6,44 +6,31 @@ import anime from "animejs"
 
 const experiences = [
   {
-    company: "TechInnovate AI",
-    position: "Lead AI Automation Engineer",
-    period: "2021 - Present",
-    description:
-      "Leading the development of AI-powered automation solutions for enterprise clients, resulting in 40% increase in operational efficiency.",
-    achievements: [
-      "Developed a custom NLP pipeline that improved text classification accuracy by 35%",
-      "Led a team of 5 engineers to deliver 12 successful client projects",
-      "Implemented CI/CD pipelines that reduced deployment time by 60%",
+    "period": "2021 - Present",
+    "description": "Freelance Web Developer specializing in WordPress development, AI-powered online tools, business websites, and affiliate marketing sites with strong SEO optimization and Google Search Console expertise.",
+    "achievements": [
+      "3+ Years of comprehensive freelance web development experience",
+      "Successfully delivered 22 AI-integrated Next.js projects for diverse clients",
+      "Developed and optimized 50+ WordPress websites with custom functionality",
+      "Built 15+ AI-powered online tools and applications driving significant user engagement",
+      "Created and scaled 12+ affiliate websites with proven revenue generation",
+      "Implemented SEO strategies resulting in 40% average organic traffic growth",
+      "Managed Google Search Console for 30+ client websites with continuous performance monitoring",
+      "Conducted keyword research leading to top 3 rankings for 100+ competitive terms"
     ],
-    technologies: ["Python", "TensorFlow", "Docker", "AWS", "React"],
+    "technologies": ["WordPress", "Next.js", "React", "AI/ML Integration", "SEO", "Google Search Console", "Google Analytics", "Keyword Research Tools", "PHP", "JavaScript", "REST APIs", "Headless CMS"]
   },
   {
-    company: "DataSphere Solutions",
-    position: "Senior AI Developer",
-    period: "2018 - 2021",
-    description:
-      "Designed and implemented machine learning models for predictive analytics and natural language processing applications.",
-    achievements: [
-      "Created a recommendation engine that increased user engagement by 28%",
-      "Optimized data processing pipelines, reducing computation costs by 45%",
-      "Mentored junior developers and conducted technical workshops",
+    "period": "2019 - 2021",
+    "description": "Web Development Specialist focusing on WordPress solutions and early AI tool implementations.",
+    "achievements": [
+      "Developed 25+ custom WordPress themes and plugins",
+      "Built first generation of AI-powered web tools and applications",
+      "Established foundational SEO and keyword research methodologies",
+      "Managed technical SEO audits and implementations for e-commerce sites"
     ],
-    technologies: ["Python", "PyTorch", "SQL", "Kubernetes", "Vue.js"],
-  },
-  {
-    company: "AutomateX",
-    position: "Automation Specialist",
-    period: "2016 - 2018",
-    description:
-      "Developed workflow automation systems that reduced manual processes by 60% and improved data accuracy.",
-    achievements: [
-      "Built custom RPA solutions for finance and HR departments",
-      "Integrated legacy systems with modern APIs, saving 20+ hours of manual work weekly",
-      "Implemented data validation frameworks that reduced errors by 75%",
-    ],
-    technologies: ["JavaScript", "Node.js", "MongoDB", "RPA", "REST APIs"],
-  },
+    "technologies": ["WordPress", "PHP", "JavaScript", "Basic AI Integration", "SEO Fundamentals", "Google Analytics"]
+  }
 ]
 
 export default function ExperienceSection() {
