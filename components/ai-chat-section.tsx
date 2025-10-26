@@ -17,26 +17,25 @@ const initialMessages = [
 
 const experienceResponses = [
   {
-    role: "assistant",
-    content: `Waqas has over 7 years of experience in AI and automation:
+    "content": `Waqas has over 3 years of experience in web development:
 
-**Lead AI Engineer** at TechInnovate (2021-Present)
-• Developed custom NLP solutions for enterprise clients
-• Led a team of 5 engineers across 12 successful projects
-• Increased operational efficiency by 40% through automation
+**Freelance Web Developer** (2023-Present)
+• Developed 22+ AI Next.js projects
+• Built 20+ WordPress websites
+• Created AI-powered online tools driving significant user engagement
 
-**Senior AI Developer** at DataSphere (2018-2021)
-• Created recommendation engines with 28% higher engagement
-• Optimized data processing pipelines, reducing costs by 45%
-• Mentored junior developers and conducted workshops`,
-  },
+**Web Development Specialist** (2022-2023)
+• Developed 7+ custom WordPress plugins
+• Built first generation of AI-powered web tools and applications
+• Established SEO strategies and keyword research methodologies`
+  }
 ]
 
 const skillsResponses = [
   {
     "content": `Waqas specializes in:
 
-**WordPress Development** - Building custom themes, plugins and business websites
+**WordPress Development** - Building plugins and business websites
 **AI-Powered Web Tools** - Creating intelligent online applications and utilities
 **Next.js Development** - Building modern, scalable web applications
 **SEO Optimization** - Improving search rankings and organic visibility
