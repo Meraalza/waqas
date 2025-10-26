@@ -113,7 +113,7 @@ export default function HeroSectionNew() {
             className="text-sm text-gray-300 max-w-xs leading-relaxed px-2"
           >
             Transforming businesses through intelligent automation.
-            <span className="text-primary font-medium"> 7+ years</span> of experience.
+            <span className="text-primary font-medium"> 3+ years</span> of experience.
           </motion.p>
 
           <motion.div
@@ -164,7 +164,7 @@ export default function HeroSectionNew() {
                 <div className="text-xs text-gray-400">Success</div>
               </div>
               <div className="glass rounded-lg p-2 border border-white/10 text-center">
-                <div className="text-sm font-bold text-accent">7+</div>
+                <div className="text-sm font-bold text-accent">3+</div>
                 <div className="text-xs text-gray-400">Years</div>
               </div>
             </div>
