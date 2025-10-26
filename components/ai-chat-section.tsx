@@ -34,17 +34,19 @@ const experienceResponses = [
 
 const skillsResponses = [
   {
-    role: "assistant",
-    content: `Waqas specializes in:
+    "content": `Waqas specializes in:
 
-**AI Development** - Building intelligent systems with ML/DL
-**Process Automation** - Creating efficient workflows
-**Data Analysis** - Extracting actionable insights
-**Voice AI** - Developing natural voice interfaces
-**Chatbot Development** - Creating conversational experiences
+**WordPress Development** - Building custom themes, plugins and business websites
+**AI-Powered Web Tools** - Creating intelligent online applications and utilities
+**Next.js Development** - Building modern, scalable web applications
+**SEO Optimization** - Improving search rankings and organic visibility
+**Affiliate Marketing Sites** - Developing revenue-generating content websites
+**Google Search Console** - Monitoring and optimizing website performance
+**Keyword Research** - Identifying valuable search opportunities
+**Business Website Development** - Creating professional corporate web presence
 
-He's proficient with tools like N8N, Airtable, GPT, Gemini, ElevenLabs, and various cloud platforms.`,
-  },
+He's proficient with tools like WordPress, Next.js, React, Google Search Console, Google Analytics, SEO tools, AI APIs, and various hosting platforms.`
+  }
 ]
 
 const projectResponses = [
