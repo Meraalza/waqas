@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://waqasbukhari.vercel.app/sitemap.xml
