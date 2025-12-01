@@ -113,7 +113,7 @@ export default function HeroSectionNew() {
             className="text-sm text-gray-300 max-w-xs leading-relaxed px-2"
           >
             Transforming businesses through intelligent automation.
-            <span className="text-primary font-medium"> 3+ years</span> of experience.
+            <span className="text-primary font-medium"> 4+ years</span> of experience.
           </motion.p>
 
           <motion.div
@@ -145,7 +145,7 @@ export default function HeroSectionNew() {
               </div>
               <div className="text-center">
                 <h3 className="text-base font-bold mb-1">Waqas Bukhari</h3>
-                <p className="text-primary font-medium text-xs mb-2">Web & App Developer</p>
+                <p className="text-primary font-medium text-xs mb-2">Web Developer & SEO Expert</p>
                 <div className="flex items-center justify-center gap-1">
                   <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-xs text-gray-300">Available for projects</span>
@@ -164,7 +164,7 @@ export default function HeroSectionNew() {
                 <div className="text-xs text-gray-400">Success</div>
               </div>
               <div className="glass rounded-lg p-2 border border-white/10 text-center">
-                <div className="text-sm font-bold text-accent">3+</div>
+                <div className="text-sm font-bold text-accent">4+</div>
                 <div className="text-xs text-gray-400">Years</div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function HeroSectionNew() {
                 className="text-xl text-gray-300 max-w-lg leading-relaxed mb-12"
               >
                 Transforming businesses through intelligent website automation.
-                <span className="text-primary font-medium"> 3+ years</span> of experience in
+                <span className="text-primary font-medium"> 4+ years</span> of experience in
                 <span className="text-secondary font-medium"> WordPress development,</span> AI-powered functionality, and
                 <span className="text-accent font-medium"> process optimization</span>.
               </motion.p>
@@ -250,7 +250,7 @@ export default function HeroSectionNew() {
 
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2">Waqas Bukhari</h3>
-                    <p className="text-primary font-medium mb-4">Web & App Developer</p>
+                    <p className="text-primary font-medium mb-4">Web Developer & SEO Expert</p>
 
                     {/* Status Indicator */}
                     <div className="flex items-center justify-center gap-2 mb-6">
@@ -296,7 +296,7 @@ export default function HeroSectionNew() {
                 whileHover={{ scale: 1.05, rotate: 3 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent">3+</div>
+                  <div className="text-2xl font-bold text-accent">4+</div>
                   <div className="text-xs text-gray-400">Years Exp</div>
                 </div>
               </motion.div>
