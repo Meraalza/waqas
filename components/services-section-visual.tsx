@@ -14,7 +14,7 @@ const services = [
     position: "top-left",
     clickable: true,
     chatMessage:
-      "I'm interested in WordPress Websites services. Can you tell me about your web development services",
+      "I'm interested in WordPress Websites services. Can you tell me about your web development services"
   },
   {
     icon: Workflow,
@@ -24,17 +24,17 @@ const services = [
     size: "medium",
     position: "top-right",
     clickable: true,
-    chatMessage: "I need to create Google Business Profile. What business solutions do you offer?",
+    chatMessage: "I need to create Google Business Profile. What business solutions do you offer?"
   },
   {
     icon: BarChart3,
-    title: "Marketing & Automation",
-    subtitle: "Streamline Sales & Lead Generation",
+    title: "SEO Expertise",
+    subtitle: "Rank #1 & Drive Organic Traffic Fast",
     color: "from-accent to-accent/60",
     size: "medium",
     position: "middle-left",
     clickable: true,
-    chatMessage: "I'm looking for Marketing & Automation. How can you help me marketing my business?",
+    chatMessage: "I'm looking to improve my Google rankings. How can your SEO services help my business grow?"
   },
   {
     icon: MessageSquare,
@@ -45,28 +45,28 @@ const services = [
     position: "middle-right",
     clickable: true,
     chatMessage:
-      "I'm interested in chatbot development services. Can you tell me more about your conversational AI solutions?",
+      "I'm interested in chatbot development services. Can you tell me more about your conversational AI solutions?"
   },
   {
     icon: Code,
-    title: "Data Management Systems",
-    subtitle: "Organized, Secure, & Efficient",
+    title: "Technical SEO & Speed Optimization",
+    subtitle: "95%+ PageSpeed │ Core Web Vitals │ Fast Indexing",
     color: "from-secondary to-accent",
     size: "medium",
     position: "bottom-left",
     clickable: true,
-    chatMessage: "I need custom software development. What bespoke solutions can you create for my business?",
+    chatMessage: "My website is slow and not ranking well. Can you fix technical SEO and improve loading speed?"
   },
   {
     icon: Database,
-    title: "Data Management",
-    subtitle: "Efficient Systems",
+    title: "Link Building & Authority Growth",
+    subtitle: "High-Quality Backlinks │ Domain Authority Boost",
     color: "from-accent to-primary",
     size: "small",
     position: "bottom-right",
     clickable: true,
-    chatMessage: "I need help with data management solutions. What services do you offer for efficient data systems?",
-  },
+    chatMessage: "I need powerful link building. How do you acquire high-authority backlinks for my site?"
+  }
 ]
 
 export default function ServicesSection() {
