@@ -95,6 +95,7 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-bold mb-4">Services</h3>
               <ul className="space-y-2">
+                <li className="text-gray-400">Search Engine Optimization</li>
                 <li className="text-gray-400">WordPress Websites</li>
                 <li className="text-gray-400">Google Business Profile</li>
                 <li className="text-gray-400">Marketing & Automation</li>
