@@ -152,7 +152,7 @@ export default function AboutSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-               Why Your Business Is Losing Money & Customers Right Now
+                Why Your Business Can't Afford to Wait
               </motion.h3>
               <ul className="space-y-4">
                 <motion.li
@@ -163,13 +163,12 @@ export default function AboutSection() {
                   variants={listItemVariants}
                 >
                   <span className="inline-block mr-3 mt-1">
-                    <Search className="w-5 h-5 text-primary" />
+                    <TrendingUp className="w-4 h-4 text-primary" />
                   </span>
                   <span>
-                    <strong className="text-primary">The Visibility Gap:</strong> 75% of users never scroll past the first page of Google. If you're not ranking in the top 5–10 positions, you're invisible to most of your potential customers.
+                    <strong className="text-primary">The Performance Gap:</strong> A significant divide is forming in the market. Companies that leverage AI automation are consistently outperforming their competitors by 3-5x in operational efficiency.
                   </span>
                 </motion.li>
-
                 <motion.li
                   className="flex items-start"
                   custom={1}
@@ -178,13 +177,12 @@ export default function AboutSection() {
                   variants={listItemVariants}
                 >
                   <span className="inline-block mr-3 mt-1">
-                    <Zap className="w-5 h-5 text-secondary" />
+                    <Building className="w-4 h-4 text-secondary" />
                   </span>
                   <span>
-                    <strong className="text-secondary">The Speed Penalty:</strong> Google actively punishes slow websites. A 1-second delay can reduce conversions by 7%, and 53% of mobile users leave if a page takes over 3 seconds to load.
+                    <strong className="text-secondary">The Bottom-Line Impact:</strong> This performance translates directly to your financials. Businesses that implement AI automation see an average of 40% reduction in costs and 50% gains in employee productivity.
                   </span>
                 </motion.li>
-
                 <motion.li
                   className="flex items-start"
                   custom={2}
@@ -193,13 +191,12 @@ export default function AboutSection() {
                   variants={listItemVariants}
                 >
                   <span className="inline-block mr-3 mt-1">
-                    <TrendingDown className="w-5 h-5 text-accent" />
+                    <Coins className="w-4 h-4 text-accent" />
                   </span>
                   <span>
-                    <strong className="text-accent">The Hidden Losses:</strong> Unfixed Google Search Console errors, poor Core Web Vitals, missing schema, and toxic backlinks are silently killing your rankings and wasting your ad budget every single day.
+                    <strong className="text-accent">The Need for Strategy:</strong> The key to unlocking this value isn't just purchasing software. It's about strategic implementation.
                   </span>
                 </motion.li>
-
                 <motion.li
                   className="flex items-start"
                   custom={3}
@@ -208,22 +205,23 @@ export default function AboutSection() {
                   variants={listItemVariants}
                 >
                   <span className="inline-block mr-3 mt-1">
-                    <BarChart3 className="w-5 h-5 text-primary" />
+                    <BarChart className="w-4 h-4 text-primary" />
                   </span>
                   <span>
-                    <strong className="text-primary">The Proven Solution:</strong> Businesses that invest in professional technical SEO, speed optimization, and white-hat link building see 200%–800% increases in organic traffic within 6–12 months.
+                    <strong className="text-primary">Strategic Implementation:</strong> The key is not just adopting AI,
+                    but strategically implementing it to transform core business processes
                   </span>
                 </motion.li>
               </ul>
 
               <motion.div
-                className="mt-8 gradient-border p-6 rounded-2xl"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                className="mt-6 gradient-border p-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
               >
-                <p className="text-center text-lg font-medium">
-                  “In 2025, not ranking on Google’s first page isn’t just bad marketing — it’s losing customers to your competitors every single day.”
+                <p className="text-center text-sm italic">
+                  "In today's market, AI automation is rapidly evolving from a competitive advantage to the new price of entry."
                 </p>
               </motion.div>
             </motion.div>
