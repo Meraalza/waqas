@@ -1,213 +1,150 @@
 "use client"
-
 import type React from "react"
-
 import { useState, useRef, useEffect } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
-import { Send, Bot, User, Sparkles, RefreshCw } from "lucide-react"
+import { Send, Bot, User, Sparkles, RefreshCw, Search, Zap, Link, Globe } from "lucide-react"
 import Image from "next/image"
 
 // Predefined chat messages
 const initialMessages = [
   {
-    content: "👋 Hi there! I'm AI Chat Bot, your virtual assistant. Ask me about waqas's work experience or skills!",
+    content: "Hi! I'm your SEO & Web Performance Assistant. Ask me anything about Syed Muhammad Waqas's SEO expertise, ranking strategies, PageSpeed optimization, or web development skills!",
   },
 ]
 
 const experienceResponses = [
   {
-    "content": `Waqas has over 3 years of experience in web development:
+    content: `Syed Muhammad Waqas has **5+ years of proven SEO & Web Development experience**:
 
-**Freelance Web Developer** (2023-Present)
-• Developed 22+ AI Next.js projects
-• Built 20+ WordPress websites
-• Created AI-powered online tools driving significant user engagement
-
-**Web Development Specialist** (2022-2023)
-• Developed 7+ custom WordPress plugins
-• Built first generation of AI-powered web tools and applications
-• Established SEO strategies and keyword research methodologies`
+**Freelance SEO Expert & Full-Stack Developer** (2020–Present)
+• Ranked 50+ websites in top 10 Google positions
+• Achieved 95%–100% Google PageSpeed scores on 100+ projects
+• Fixed thousands of Google Search Console errors (crawl, indexing, mobile usability, Core Web Vitals)
+• Built & optimized 40+ WordPress and Next.js websites
+• Mastered fast indexing techniques – new pages indexed in under 24 hours
+• Removed spam/backlink penalties and recovered lost traffic for multiple sites
+• Expert in schema markup, header tags, internal linking, and technical audits`
   }
 ]
 
 const skillsResponses = [
   {
-    "content": `Waqas specializes in:
+    content: `Waqas specializes in real, results-driven SEO & development:
 
-**WordPress Development** - Building plugins and business websites
-**AI-Powered Web Tools** - Creating intelligent online applications and utilities
-**Next.js Development** - Building modern, scalable web applications
-**SEO Optimization** - Improving search rankings and organic visibility
-**Affiliate Marketing Sites** - Developing revenue-generating content websites
-**Google Search Console** - Monitoring and optimizing website performance
-**Keyword Research** - Identifying valuable search opportunities
-**Business Website Development** - Creating professional corporate web presence
+**Core SEO Skills**
+• Advanced Keyword Research & Competitor Analysis
+• Google Search Console & Analytics Mastery
+• Technical SEO Audits & Error Resolution
+• Schema Markup (JSON-LD) Implementation
+• Core Web Vitals & PageSpeed Optimization (95%–100%)
+• Fast Indexing + Spammy Page Unindexing
+• High-Quality Link Building & Outreach
 
-He's proficient with tools like WordPress, Next.js, React, Google Search Console, Google Analytics, SEO tools, AI APIs, and various hosting platforms.`
+**Web Development**
+• WordPress + Elementor (Custom Themes & Plugins)
+• Next.js + React Applications
+• Vercel & GitHub Deployment
+• Clean, Semantic HTML/CSS/JS
+
+**Content & Strategy**
+• 100% Unique, Human-Written, AI-Undetectable Content
+• On-Page SEO Optimization
+• Conversion-Focused Copywriting
+
+Tools: Ahrefs, SEMrush, Screaming Frog, GSC, GA4, PageSpeed Insights, Surfer SEO, Rank Math, Yoast, AI tools (used smartly, never for final content)`
   }
 ]
 
 const projectResponses = [
   {
-    "content": `Waqas has built several innovative projects:
+    content: `Here are some of Waqas's successful SEO & web projects:
 
-**Video to Gif Converter Web App** - CSR Next.js application for creating GIFs from videos
-https://makegifs.online/
+**Local Business SEO Success**
+→ Took a Karachi-based client from 0 to 3,000+ monthly organic visitors in 6 months
+→ #1–3 rankings for 50+ high-competition local keywords
 
-**Premium Electric Bikes Affiliate Website** - E-commerce affiliate site for electric bikes
-https://ecobikes.vercel.app/
+**E-commerce Site Recovery**
+→ Recovered a penalized online store – traffic restored +300% in 4 months
+→ Removed manual penalty + cleaned toxic backlinks
 
-**Adsense Tools for Maximize Ad Revenue** - Toolkit for optimizing Google Adsense revenue
-https://informi.vercel.app/
+**Next.js Portfolio & Tools**
+→ https://waqasbukhari.vercel.app (this site – 99/100 PageSpeed mobile)
+→ Multiple client sites scoring 95–100 on PageSpeed (WordPress & Next.js)
 
-**Development Productivity Toolkit** - Ultimate toolkit for developer productivity
-https://www.devbuddy.online/
+**Speed Optimization Projects**
+→ Converted slow WordPress sites (40–60 scores) → 95–100 in under 7 days
+→ Implemented lazy loading, WebP, caching, CDN, code splitting
 
-Each project demonstrates his expertise in creating practical, user-focused web applications using modern technologies.`
+Every project is backed by data, screenshots, and real ranking improvements.`
   }
 ]
 
-const aiDevelopmentResponses = [
+// Updated responses for the new service cards
+const seoExpertiseResponses = [
   {
-    "content": `Waqas has built several innovative projects:
+    role: "assistant",
+    content: `Yes! I specialize in complete SEO domination:
 
-**Video to Gif Converter Web App** - CSR Next.js application for creating GIFs from videos
-https://makegifs.online/
+• Full Technical + On-Page + Off-Page SEO
+• Keyword research with commercial intent
+• Site structure & internal linking strategy
+• Content gap analysis & optimization
+• Monthly ranking & traffic reports
+• White-hat link building that actually works
+• Guaranteed traffic growth or work until achieved
 
-**Premium Electric Bikes Affiliate Website** - E-commerce affiliate site for electric bikes
-https://ecobikes.vercel.app/
+Currently helping businesses in Pakistan, USA, UK & UAE rank higher and get more customers.
 
-**Adsense Tools for Maximize Ad Revenue** - Toolkit for optimizing Google Adsense revenue
-https://informi.vercel.app/
-
-**Development Productivity Toolkit** - Ultimate toolkit for developer productivity
-https://www.devbuddy.online/
-
-Each project demonstrates his expertise in creating practical, user-focused web applications using modern technologies.`
+Ready to 10x your organic traffic? Let’s talk strategy!`
   }
 ]
 
-const processAutomationResponses = [
+const technicalSEOResponses = [
   {
     role: "assistant",
-    content: `Perfect! Waqas's process automation solutions cover:
+    content: `I fix everything Google cares about:
 
-**RPA Implementation** - Robotic Process Automation for repetitive tasks
-**Workflow Optimization** - Streamlined business processes
-**API Integration** - Connecting different systems seamlessly
-**Task Automation** - Automated scheduling and execution
-**Business Intelligence** - Automated reporting and analytics
+Core Web Vitals Optimization (LCP, CLS, FID/INP)
+• 95%–100% PageSpeed scores (mobile & desktop)
+• Crawl error & indexing issue resolution
+• XML sitemaps, robots.txt, canonical tags
+• Schema markup (FAQ, Product, LocalBusiness, Article)
+• Mobile usability & HTTPS fixes
+• Image optimization, lazy loading, font optimization
+• Migration without traffic loss
 
-**Tools & Platforms:**
-• N8N for workflow automation
-• Zapier and Make.com integrations
-• Custom Python automation scripts
-• Cloud-based automation solutions
+Most sites see massive improvements within 7–14 days.
 
-What specific processes are you looking to automate?`,
-  },
+Send me your URL and I’ll give you a free mini-audit!`
+  }
 ]
 
-const dataAnalyticsResponses = [
+const linkBuildingResponses = [
   {
     role: "assistant",
-    content: `Great choice! Waqas's data analytics services include:
+    content: `My link building is safe, powerful, and sustainable:
 
-**Predictive Analytics** - Forecasting future trends and outcomes
-**Data Visualization** - Interactive dashboards and reports
-**Business Intelligence** - Strategic insights from your data
-**Performance Metrics** - KPI tracking and optimization
-**Real-time Analytics** - Live data processing and monitoring
+• Guest posts on real authority sites (DA40–DR80+)
+• Niche edits & curated links
+• HARO (Help A Reporter Out) responses
+• Resource page link building
+• Broken link building
+• Skyscraper technique
+• Zero PBNs or spam – only Google-safe methods
 
-**Technologies:**
-• Python (Pandas, NumPy, Scikit-learn)
-• Tableau, Power BI for visualization
-• SQL databases and data warehouses
-• Apache Spark for big data processing
+Average result: +15–30 DR points in 4–6 months
+Many clients saw 200%–500% traffic increase from links alone.
 
-What kind of data insights are you looking to gain?`,
-  },
+Want a custom link building strategy? Just say the word!`
+  }
 ]
 
-const chatbotResponses = [
-  {
-    role: "assistant",
-    content: `Great choice! Waqas's chatbot development services include:
-
-**Natural Language Processing** - Advanced NLP for human-like conversations
-**Multi-platform Integration** - Deploy across web, mobile, and messaging platforms
-**Voice Integration** - Voice-enabled chatbots with speech recognition
-**Custom Training** - Tailored to your business knowledge and tone
-**Analytics Dashboard** - Track conversations and optimize performance
-
-**Features:**
-• 24/7 customer support automation
-• Lead generation and qualification
-• FAQ automation and knowledge base
-• Integration with CRM and business systems
-
-Would you like to discuss a specific chatbot project for your business?`,
-  },
-]
-
-const customSoftwareResponses = [
-  {
-    role: "assistant",
-    content: `Excellent! Waqas's custom software development services include:
-
-**Full-stack Development** - Complete web and mobile applications
-**API Development** - RESTful and GraphQL API creation
-**System Integration** - Connecting existing systems and platforms
-**Cloud Solutions** - Scalable cloud-native applications
-**Database Design** - Efficient data architecture and management
-
-**Technologies:**
-• Frontend: React, Next.js, Vue.js, Flutter
-• Backend: Node.js, Python, PostgreSQL, MongoDB
-• Cloud: AWS, Azure, Google Cloud Platform
-• DevOps: Docker, Kubernetes, CI/CD pipelines
-
-What type of custom software solution are you looking to build?`,
-  },
-]
-
-const dataManagementResponses = [
-  {
-    role: "assistant",
-    content: `Excellent! Waqas's data management solutions cover:
-
-**Database Architecture** - Scalable and efficient database design
-**Data Pipeline Automation** - Streamlined data processing workflows
-**Real-time Analytics** - Live data processing and insights
-**Data Security** - Enterprise-grade security and compliance
-**Cloud Integration** - AWS, Azure, and GCP data solutions
-**Migration Services** - Seamless data migration and modernization
-
-**Capabilities:**
-• ETL/ELT pipeline development
-• Data warehouse design and optimization
-• Real-time streaming data processing
-• Data governance and quality assurance
-
-What specific data challenges are you looking to solve?`,
-  },
-]
-
-// Rich text formatting function
 const formatMessage = (content: string) => {
-  // Convert **text** to bold
   let formatted = content.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-
-  // Convert bullet points to proper list items
-  formatted = formatted.replace(/^• (.+)$/gm, "<li>$1</li>")
-
-  // Wrap consecutive list items in ul tags
-  formatted = formatted.replace(/(<li>.*<\/li>\s*)+/gs, "<ul>$&</ul>")
-
-  // Convert line breaks to proper spacing
+  formatted = formatted.replace(/^• (.+)$/gm, "<li class='ml-5'>$1</li>")
+  formatted = formatted.replace(/(<li class='ml-5'>.*<\/li>\s*)+/gs, "<ul class='space-y-1 my-2'>$&</ul>")
   formatted = formatted.replace(/\n\n/g, "<br><br>")
   formatted = formatted.replace(/\n/g, "<br>")
-
   return formatted
 }
 
@@ -218,62 +155,45 @@ export default function AIChatSection() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const chatMessagesRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: false, amount: 0.1 })
   const controls = useAnimation()
 
-  const chatContainerRef = useRef<HTMLDivElement>(null)
-
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible")
-    }
+    if (isInView) controls.start("visible")
   }, [isInView, controls])
 
   useEffect(() => {
     scrollToBottom()
   }, [messages])
 
-  // Listen for service click events
+  // Listen for service card clicks
   useEffect(() => {
     const handleServiceMessage = (event: any) => {
       const { message } = event.detail
-      if (message) {
-        // Add user message
-        const userMessage = { role: "user", content: message }
-        setMessages((prev) => [...prev, userMessage])
-        setIsTyping(true)
+      if (!message) return
 
-        // Simulate AI response
-        setTimeout(() => {
-          let response
-          const lowercaseMessage = message.toLowerCase()
+      const userMessage = { role: "user", content: message }
+      setMessages(prev => [...prev, userMessage])
+      setIsTyping(true)
 
-          if (lowercaseMessage.includes("ai development")) {
-            response = aiDevelopmentResponses[0]
-          } else if (lowercaseMessage.includes("process automation")) {
-            response = processAutomationResponses[0]
-          } else if (lowercaseMessage.includes("data analytics")) {
-            response = dataAnalyticsResponses[0]
-          } else if (lowercaseMessage.includes("chatbot")) {
-            response = chatbotResponses[0]
-          } else if (lowercaseMessage.includes("custom software")) {
-            response = customSoftwareResponses[0]
-          } else if (lowercaseMessage.includes("data management")) {
-            response = dataManagementResponses[0]
-          } else {
-            response = {
-              role: "assistant",
-              content:
-                "Thank you for your interest! I'd be happy to discuss this service with you. What specific requirements do you have?",
-            }
-          }
+      setTimeout(() => {
+        let response
+        const lower = message.toLowerCase()
 
-          setMessages((prev) => [...prev, response])
-          setIsTyping(false)
-        }, 1500)
-      }
+        if (lower.includes("seo ") || lower.includes("ranking") || lower.includes("traffic")) {
+          response = seoExpertiseResponses[0]
+        } else if (lower.includes("technical") || lower.includes("pagespeed") || lower.includes("core web") || lower.includes("speed")) {
+          response = technicalSEOResponses[0]
+        } else if (lower.includes("link building") || lower.includes("backlinks") || lower.includes("authority")) {
+          response = linkBuildingResponses[0]
+        } else {
+          response = { role: "assistant", content: "I'm ready to help with your SEO! Tell me about your website and goals." }
+        }
+
+        setMessages(prev => [...prev, response])
+        setIsTyping(false)
+      }, 1500)
     }
 
     window.addEventListener("triggerChatMessage", handleServiceMessage)
@@ -281,319 +201,165 @@ export default function AIChatSection() {
   }, [])
 
   const scrollToBottom = () => {
-    // Only scroll within the chat container, not the entire page
-    if (chatMessagesRef.current) {
-      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight
-    }
+    chatMessagesRef.current?.scrollTo({ top: chatMessagesRef.current.scrollHeight, behavior: "smooth" })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    e.stopPropagation()
-
     if (!input.trim()) return
 
-    // Add user message
     const userMessage = { role: "user", content: input }
-    setMessages((prev) => [...prev, userMessage])
+    setMessages(prev => [...prev, userMessage])
     setInput("")
     setIsTyping(true)
 
-    // Focus back on input after submission
     setTimeout(() => {
-      inputRef.current?.focus()
-    }, 100)
-
-    // Simulate AI response
-    setTimeout(() => {
+      const lower = input.toLowerCase()
       let response
-      const lowercaseInput = input.toLowerCase()
 
-      if (lowercaseInput.includes("experience") || lowercaseInput.includes("work") || lowercaseInput.includes("job")) {
+      if (lower.includes("experience") || lower.includes("years")) {
         response = experienceResponses[0]
-      } else if (lowercaseInput.includes("skill") || lowercaseInput.includes("know") || lowercaseInput.includes("do")) {
+      } else if (lower.includes("skill") || lower.includes("expertise") || lower.includes("do")) {
         response = skillsResponses[0]
-      } else if (
-        lowercaseInput.includes("project") ||
-        lowercaseInput.includes("portfolio") ||
-        lowercaseInput.includes("build")
-      ) {
+      } else if (lower.includes("project") || lower.includes("case") || lower.includes("result")) {
         response = projectResponses[0]
-      } else if (lowercaseInput.includes("ai development") || lowercaseInput.includes("machine learning")) {
-        response = aiDevelopmentResponses[0]
-      } else if (lowercaseInput.includes("process automation") || lowercaseInput.includes("workflow")) {
-        response = processAutomationResponses[0]
-      } else if (lowercaseInput.includes("data analytics") || lowercaseInput.includes("analytics")) {
-        response = dataAnalyticsResponses[0]
-      } else if (lowercaseInput.includes("chatbot")) {
-        response = chatbotResponses[0]
-      } else if (lowercaseInput.includes("custom software") || lowercaseInput.includes("software development")) {
-        response = customSoftwareResponses[0]
-      } else if (lowercaseInput.includes("data management") || lowercaseInput.includes("database")) {
-        response = dataManagementResponses[0]
+      } else if (lower.includes("seo")) {
+        response = seoExpertiseResponses[0]
+      } else if (lower.includes("speed") || lower.includes("pagespeed") || lower.includes("core web vitals")) {
+        response = technicalSEOResponses[0]
+      } else if (lower.includes("link") || lower.includes("backlink")) {
+        response = linkBuildingResponses[0]
       } else {
         response = {
           role: "assistant",
-          content:
-            "I can tell you about Waqas's work experience, skills, projects, or specific services like AI development, process automation, data analytics, chatbot development, custom software, and data management. What would you like to know?",
+          content: "I can help you with SEO strategy, technical fixes, PageSpeed optimization, link building, content, or full website audits. Just tell me your goal!",
         }
       }
 
-      setMessages((prev) => [...prev, response])
+      setMessages(prev => [...prev, response])
       setIsTyping(false)
     }, 1500)
   }
 
   const handleQuickQuestion = (question: string) => {
-    // Simulate user clicking a quick question
     const userMessage = { role: "user", content: question }
-    setMessages((prev) => [...prev, userMessage])
+    setMessages(prev => [...prev, userMessage])
     setIsTyping(true)
 
-    // Simulate AI response
     setTimeout(() => {
       let response
+      if (question.includes("experience")) response = experienceResponses[0]
+      else if (question.includes("skills")) response = skillsResponses[0]
+      else if (question.includes("projects")) response = projectResponses[0]
 
-      if (question.includes("experience")) {
-        response = experienceResponses[0]
-      } else if (question.includes("skills")) {
-        response = skillsResponses[0]
-      } else if (question.includes("projects")) {
-        response = projectResponses[0]
-      }
-
-      if (response) {
-        setMessages((prev) => [...prev, response])
-      }
+      if (response) setMessages(prev => [...prev, response])
       setIsTyping(false)
     }, 1500)
   }
 
-  const resetChat = () => {
-    setMessages(initialMessages)
-  }
+  const resetChat = () => setMessages(initialMessages)
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  }
-
-  const chatElementVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  }
+  // Animation variants (unchanged)
+  const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } }
+  const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }
 
   return (
-    <section id="experience" className="py-20 md:py-32 relative bg-gradient-to-b from-card/50 to-background">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="chat" className="py-20 md:py-32 relative bg-gradient-to-b from-card/50 to-background overflow-hidden">
       <div className="container mx-auto px-4">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={controls}
-          variants={containerVariants}
-          className="text-center mb-12"
-          style={{ opacity: 1 }}
-        >
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Chat with <span className="text-gradient">AI Wiki</span>
+        <motion.div ref={ref} initial="hidden" animate={controls} variants={containerVariants} className="text-center mb-12">
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-4">
+            Chat with My <span className="text-gradient">SEO Assistant</span>
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-300 max-w-2xl mx-auto">
-            Ask about my work experience, skills, projects, or specific services
+          <motion.p variants={itemVariants} className="text-gray-300 max-w-2xl mx-auto text-lg">
+            Ask about rankings, PageSpeed, technical SEO, link building, or see real results
           </motion.p>
-          <motion.div
-            variants={itemVariants}
-            className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4"
-          ></motion.div>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto" ref={chatContainerRef}>
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            className="glass rounded-2xl overflow-hidden chat-element"
-            variants={chatElementVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            className="glass rounded-3xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            {/* Chat header */}
-            <div className="p-4 border-b border-white/10 flex items-center justify-between bg-card/50">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-white" />
+            {/* Header */}
+            <div className="p-5 border-b border-white/10 bg-card/70 backdrop-blur flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center">
+                  <Search className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-medium">AI Wiki</h3>
-                  <p className="text-xs text-gray-400">Virtual Assistant</p>
+                  <h3 className="font-semibold text-lg">SEO Assistant</h3>
+                  <p className="text-sm text-gray-400">Powered by real 5-year expertise</p>
                 </div>
               </div>
-              <button
-                onClick={resetChat}
-                className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                title="Reset chat"
-                type="button"
-              >
-                <RefreshCw size={16} />
-              </button>
+              <button onClick={resetChat} className="p-2 hover:bg-white/10 rounded-lg transition"><RefreshCw size={18} /></button>
             </div>
 
-            {/* Chat messages - Fixed height container with internal scrolling */}
-            <div
-              ref={chatMessagesRef}
-              className="h-[400px] overflow-y-auto p-4 space-y-4 scroll-smooth"
-              style={{ scrollBehavior: "smooth" }}
-            >
-              {messages.map((message, index) => (
+            {/* Messages */}
+            <div ref={chatMessagesRef} className="h-96 overflow-y-auto p-5 space-y-4">
+              {messages.map((msg, i) => (
                 <motion.div
-                  key={index}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                  key={i}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
+                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  <div
-                    className={`max-w-[80%] rounded-2xl p-3 ${
-                      message.role === "user" ? "bg-primary/20 text-white" : "bg-card/50 text-white"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2 mb-1">
-                      {message.role === "assistant" ? (
-                        <Bot size={16} className="text-primary" />
-                      ) : (
-                        <User size={16} className="text-secondary" />
-                      )}
-                      <span className="text-xs font-medium">{message.role === "assistant" ? "AI Wiki" : "You"}</span>
-                    </div>
-                    <div
-                      className="text-sm rich-text"
-                      dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
-                    />
+                  <div className={`max-w-lg rounded-2xl px-4 py-3 ${msg.role === "user" ? "bg-primary text-white" : "bg-card/70"}`}>
+                    <p className="text-sm rich-text" dangerouslySetInnerHTML={{ __html: formatMessage(msg.content) }} />
                   </div>
                 </motion.div>
               ))}
 
               {isTyping && (
-                <motion.div
-                  className="flex justify-start"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="max-w-[80%] rounded-2xl p-3 bg-card/50 text-white">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Bot size={16} className="text-primary" />
-                      <span className="text-xs font-medium">AI Wiki</span>
-                    </div>
-                    <div className="flex gap-1">
-                      <span
-                        className="w-2 h-2 rounded-full bg-primary animate-bounce"
-                        style={{ animationDelay: "0ms" }}
-                      ></span>
-                      <span
-                        className="w-2 h-2 rounded-full bg-primary animate-bounce"
-                        style={{ animationDelay: "150ms" }}
-                      ></span>
-                      <span
-                        className="w-2 h-2 rounded-full bg-primary animate-bounce"
-                        style={{ animationDelay: "300ms" }}
-                      ></span>
+                <div className="flex justify-start">
+                  <div className="bg-card/70 rounded-2xl px-4 py-3">
+                    <div className="flex gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-bounce" />
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-bounce delay-150" />
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-bounce delay-300" />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )}
-
-              {/* Invisible element to scroll to */}
-              <div ref={messagesEndRef} />
             </div>
 
-            {/* Quick questions */}
-            <div className="p-3 border-t border-white/10 flex gap-2 overflow-x-auto hide-scrollbar">
-              <button
-                type="button"
-                onClick={() => handleQuickQuestion("Tell me about Waqas's work experience")}
-                className="px-3 py-1 text-xs rounded-full bg-card/50 border border-white/10 whitespace-nowrap hover:bg-primary/20 transition-colors"
-              >
-                Work experience
+            {/* Quick Questions */}
+            <div className="px-5 py-3 border-t border-white/10 flex gap-3 overflow-x-auto">
+              <button onClick={() => handleQuickQuestion("Tell me about Waqas's SEO experience")} className="px-4 py-2 text-sm bg-card/50 rounded-full hover:bg-primary/30 transition whitespace-nowrap">
+                Experience
               </button>
-              <button
-                type="button"
-                onClick={() => handleQuickQuestion("What are Waqas's skills?")}
-                className="px-3 py-1 text-xs rounded-full bg-card/50 border border-white/10 whitespace-nowrap hover:bg-primary/20 transition-colors"
-              >
+              <button onClick={() => handleQuickQuestion("What are Waqas's main skills?")} className="px-4 py-2 text-sm bg-card/50 rounded-full hover:bg-primary/30 transition whitespace-nowrap">
                 Skills
               </button>
-              <button
-                type="button"
-                onClick={() => handleQuickQuestion("Tell me about Waqas's projects")}
-                className="px-3 py-1 text-xs rounded-full bg-card/50 border border-white/10 whitespace-nowrap hover:bg-primary/20 transition-colors"
-              >
-                Projects
+              <button onClick={() => handleQuickQuestion("Show me real SEO results and projects")} className="px-4 py-2 text-sm bg-card/50 rounded-full hover:bg-primary/30 transition whitespace-nowrap">
+                Results & Projects
               </button>
             </div>
 
-            {/* Chat input */}
-            <div className="p-4 border-t border-white/10">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  type="text"
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about my experience, skills, or projects..."
-                  className="flex-1 bg-card/50 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary/50"
-                  autoComplete="off"
-                />
-                <button
-                  type="submit"
-                  className="p-2 rounded-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity disabled:opacity-50"
-                  disabled={!input.trim()}
-                >
-                  <Send size={18} className="text-white" />
-                </button>
-              </form>
-            </div>
+            {/* Input */}
+            <form onSubmit={handleSubmit} className="p-5 border-t border-white/10 flex gap-3">
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask about SEO, PageSpeed, rankings, audits..."
+                className="flex-1 bg-card/50 rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              />
+              <button type="submit" className="p-3 rounded-full bg-gradient-to-r from-green-500 to-blue-600 hover:opacity-90 transition">
+                <Send size={20} className="text-white" />
+              </button>
+            </form>
           </motion.div>
 
-          {/* AI Assistant image */}
-          <motion.div
-            className="mt-8 flex justify-center chat-element"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+          {/* Profile Image */}
+          <motion.div className="flex justify-center mt-10">
             <div className="relative">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/30 glow-effect">
-                <Image
-                  src="/images/waqas-bukhari.webp"
-                  alt="Waqas Bukhari"
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl">
+                <Image src="/images/waqas-bukhari.webp" alt="Syed Muhammad Waqas" width={112} height={112} className="object-cover" />
               </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                <Sparkles size={14} className="text-white" />
+              <div className="absolute -bottom-1 -right-1 w-10 h-10 bg-gradient-to-br from-green-400 to-blue-600 rounded-full flex items-center justify-center">
+                <Zap size={20} className="text-white" />
               </div>
             </div>
           </motion.div>
