@@ -14,7 +14,7 @@ const initialMessages = [
 
 const experienceResponses = [
   {
-    content: `Syed Muhammad Waqas has **5+ years of proven SEO & Web Development experience**:
+    content: `Syed Muhammad Waqas has **4+ years of proven SEO & Web Development experience**:
 
 **Freelance SEO Expert & Full-Stack Developer** (2020–Present)
 • Ranked 50+ websites in top 10 Google positions
@@ -290,7 +290,7 @@ export default function AIChatSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">SEO Assistant</h3>
-                  <p className="text-sm text-gray-400">Powered by real 5-year expertise</p>
+                  <p className="text-sm text-gray-400">Powered by real 4-year expertise</p>
                 </div>
               </div>
               <button onClick={resetChat} className="p-2 hover:bg-white/10 rounded-lg transition"><RefreshCw size={18} /></button>
