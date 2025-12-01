@@ -98,7 +98,7 @@ export default function AboutSection() {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
-                    I'm Syed Muhammad Waqas, a Full-Stack Web Developer and SEO Specialist with 5+ years of experience. I help businesses dominate Google search results and grow organic traffic by building high-performance WordPress & Next.js websites, implementing advanced technical SEO, and delivering lightning-fast, conversion-focused digital experiences.
+                    I'm Syed Muhammad Waqas, a Full-Stack Web Developer and SEO Specialist with 4+ years of experience. I help businesses dominate Google search results and grow organic traffic by building high-performance WordPress & Next.js websites, implementing advanced technical SEO, and delivering lightning-fast, conversion-focused digital experiences.
                   </motion.p>
                 </div>
               </div>
