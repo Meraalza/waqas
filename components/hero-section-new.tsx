@@ -188,8 +188,8 @@ export default function HeroSectionNew() {
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight">
-                <span className="block">WORDPRESS &</span>
-                <span className="block text-gradient">AI INTEGRATION</span>
+                <span className="block">SEO &</span>
+                <span className="block text-gradient">Web Development</span>
                 <span className="block italic text-secondary">EXPERT</span>
               </h1>
 
