@@ -101,8 +101,8 @@ export default function HeroSectionNew() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl sm:text-3xl font-heading font-bold leading-tight"
           >
-            <span className="block">WORDPRESS &</span>
-            <span className="block text-gradient">AI INTEGRATION</span>
+            <span className="block">SEO &</span>
+            <span className="block text-gradient">Web Development</span>
             <span className="block italic text-secondary">EXPERT</span>
           </motion.h1>
 
