@@ -202,7 +202,7 @@ export default function HeroSectionNew() {
                 Driving explosive organic growth with proven SEO strategies.
                 <span className="text-primary font-medium"> 4+ years</span> of experience in
                 <span className="text-secondary font-medium"> advanced SEO & technical optimization,</span> AI-powered functionality, and
-                <span className="text-accent font-medium"> WordPress + Next.js development,</span>.
+                <span className="text-accent font-medium"> WordPress + Next.js development</span>.
               </motion.p>
 
               <motion.div
