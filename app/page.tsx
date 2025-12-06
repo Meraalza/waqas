@@ -53,8 +53,8 @@ export default function Home() {
           <SectionIndicators />
           <HeroSectionNew />
           <AboutSection />
-          <ServicesSection />
-          <SEO />
+          <Seo />
+          <ServicesSection />          
           <ProjectsSection />
           <AIChatSection />
           <LatestBlogsSection />
