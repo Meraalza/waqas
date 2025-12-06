@@ -2,157 +2,109 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useInView, useAnimation, type PanInfo } from "framer-motion"
-import { ExternalLink, ChevronLeft, ChevronRight, Zap, Search, BarChart, Globe, Target, Clock, Shield, TrendingUp, CheckCircle, Gauge } from "lucide-react"
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
-const seoProjects = [
+const seoSlides = [
   {
-    id: 1,
-    title: "SEO Performance & Benefits",
-    type: "benefits",
-    benefits: [
-      "95%+ Google Page Speed Score",
-      "Mobile-First Indexing Ready",
-      "Core Web Vitals Optimized",
-      "Improved Search Rankings",
-      "Higher Conversion Rates",
-      "Better User Experience"
-    ],
-    metrics: [
-      { label: "Performance", value: 97, color: "from-green-500 to-emerald-500" },
-      { label: "Accessibility", value: 96, color: "from-blue-500 to-cyan-500" },
-      { label: "Best Practices", value: 95, color: "from-purple-500 to-pink-500" },
-      { label: "SEO Score", value: 98, color: "from-orange-500 to-yellow-500" },
-    ],
-    color: "from-blue-500/20 to-cyan-500/20",
+    title: "SEO Benefits",
+    description: "Unlock the power of search engine optimization for your business with our comprehensive SEO services.",
+    color: "from-blue-500/20 to-purple-500/20",
   },
   {
-    id: 2,
-    title: "SEO Expertise & Services",
-    type: "expertise",
-    expertise: [
-      {
-        icon: <Search className="w-5 h-5" />,
-        title: "Keyword Research",
-        description: "Comprehensive keyword analysis and strategy",
-        items: ["Competitor Analysis", "Search Volume", "Keyword Mapping", "Intent Optimization"]
-      },
-      {
-        icon: <BarChart className="w-5 h-5" />,
-        title: "Technical SEO",
-        description: "Website infrastructure optimization",
-        items: ["Site Architecture", "Schema Markup", "XML Sitemaps", "Canonical Tags"]
-      },
-      {
-        icon: <Globe className="w-5 h-5" />,
-        title: "On-Page SEO",
-        description: "Content and page optimization",
-        items: ["Meta Tags", "Content Optimization", "Header Tags", "Internal Linking"]
-      },
-      {
-        icon: <Target className="w-5 h-5" />,
-        title: "Off-Page SEO",
-        description: "Backlink and authority building",
-        items: ["Link Building", "Local SEO", "Social Signals", "Brand Mentions"]
-      },
-    ],
-    color: "from-purple-500/20 to-pink-500/20",
+    title: "SEO Expertise",
+    description: "Our team brings years of experience in search engine optimization, content strategy, and technical SEO implementation.",
+    color: "from-purple-500/20 to-blue-500/20",
   },
   {
-    id: 3,
-    title: "Completed SEO Projects",
-    type: "projects",
-    projects: [
-      {
-        title: "E-commerce SEO Optimization",
-        description: "Increased organic traffic by 300% for major e-commerce brand",
-        metrics: "+300% Traffic | +220% Conversions",
-        tags: ["E-commerce", "Technical SEO", "Content Strategy"],
-        demoLink: "https://example.com/ecommerce-seo",
-        status: "Completed",
-        color: "from-green-500/20 to-emerald-500/20"
-      },
-      {
-        title: "Local Business SEO Campaign",
-        description: "Achieved #1 ranking for 25+ local keywords in 3 months",
-        metrics: "25+ #1 Rankings | 95% Visibility",
-        tags: ["Local SEO", "Google My Business", "Citations"],
-        demoLink: "https://example.com/local-seo",
-        status: "Completed",
-        color: "from-blue-500/20 to-cyan-500/20"
-      },
-      {
-        title: "SaaS Company SEO Growth",
-        description: "Generated 1500+ qualified leads through organic search",
-        metrics: "1500+ Leads | 5x ROI",
-        tags: ["SaaS", "Lead Generation", "Content Marketing"],
-        demoLink: "https://example.com/saas-seo",
-        status: "Completed",
-        color: "from-orange-500/20 to-yellow-500/20"
-      },
-    ],
-    color: "from-cyan-500/20 to-emerald-500/20",
+    title: "Completed Projects",
+    description: "Explore our portfolio of successful SEO implementations that have driven significant growth for our clients.",
+    color: "from-green-500/20 to-emerald-500/20",
   },
 ]
 
-export default function SEOProjectsSlider() {
+// Projects data from the knowledge base
+const projects = [
+  {
+    title: "eBikes & Accessories Affiliate Website",
+    description:
+      "An affiliate marketing website specializing in electric bikes and related accessories with comprehensive product reviews and recommendations.",
+    image: "/images/ebikes.PNG",
+    links: {
+      demo: "https://ecobikes.vercel.app/",
+    },
+    features: ["Product Catalog", "Reviews", "Affiliate Links", "Buying Guides"],
+  },
+  {
+    title: "Video To GIF Converter",
+    description:
+      "Convert Videos into high-quality animated GIFs instantly.",
+    image: "/images/video-to-gif.PNG",
+    links: {
+      demo: "https://makegifs.online/",
+    },
+    features: ["Project Showcase", "Skills Display", "Contact Form", "Responsive Design"],
+  },
+  {
+    title: "Code & Data Tools",
+    description:
+      "A collection of utility tools for developers including various code and data processing utilities.",
+    image: "/images/devbuddy.png",
+    links: {
+      demo: "https://devbuddy.online/",
+    },
+    features: ["Code Utilities", "Data Tools", "Formatting", "Conversion Tools"],
+  },
+]
+
+export default function SeoProjectsSlider() {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: false, amount: 0.1, fallback: true })
+  const isInView = useInView(ref, { once: false, amount: 0.1 })
   const controls = useAnimation()
   const [activeIndex, setActiveIndex] = useState(0)
-  const projectsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     controls.start("visible")
   }, [controls])
 
   const containerVariants = {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.15,
-          delayChildren: 0.1,
-        },
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
-    cardVariants = {
-      hidden: { y: 30, opacity: 0 },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.8, ease: "easeOut" },
-      },
+  }
+
+  const cardVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
     },
-    itemVariants = {
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: "easeOut" },
-      },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
     },
-    meterVariants = {
-      hidden: { scaleX: 0 },
-      visible: (custom: number) => ({
-        scaleX: 1,
-        transition: {
-          duration: 1.2,
-          delay: custom * 0.2,
-          ease: "easeOut"
-        }
-      })
-    }
+  }
 
   const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % seoProjects.length)
+    setActiveIndex((prev) => (prev + 1) % seoSlides.length)
   }
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + seoProjects.length) % seoProjects.length)
+    setActiveIndex((prev) => (prev - 1 + seoSlides.length) % seoSlides.length)
   }
 
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const handleDragEnd = (_: any, info: PanInfo) => {
     const threshold = 50
     if (info.offset.x > threshold) {
       prevSlide()
@@ -160,17 +112,6 @@ export default function SEOProjectsSlider() {
       nextSlide()
     }
   }
-
-  const getSlideIcon = (index: number) => {
-    const icons = [
-      <Gauge key="gauge" className="w-6 h-6 text-white" />,
-      <Search key="search" className="w-6 h-6 text-white" />,
-      <TrendingUp key="trending" className="w-6 h-6 text-white" />,
-    ]
-    return icons[index] || <TrendingUp className="w-6 h-6 text-white" />
-  }
-
-  const currentSlide = seoProjects[activeIndex]
 
   return (
     <section id="seo-projects" className="py-20 md:py-32 relative">
@@ -185,13 +126,12 @@ export default function SEOProjectsSlider() {
           animate={controls}
           variants={containerVariants}
           className="text-center mb-16"
-          style={{ opacity: 1 }}
         >
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            SEO <span className="text-gradient">Projects & Results</span>
+            SEO <span className="text-gradient">Success Stories</span>
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-300 max-w-2xl mx-auto">
-            Showcasing proven SEO strategies, technical optimizations, and measurable results
+            Discover how our SEO expertise has transformed digital presence and driven measurable growth
           </motion.p>
           <motion.div
             variants={itemVariants}
@@ -199,7 +139,7 @@ export default function SEOProjectsSlider() {
           ></motion.div>
         </motion.div>
 
-        <div className="relative" ref={projectsRef}>
+        <div className="relative">
           {/* Desktop Navigation Arrows */}
           <div className="hidden lg:flex absolute top-1/2 -left-12 transform -translate-y-1/2 z-20">
             <motion.button
@@ -213,7 +153,7 @@ export default function SEOProjectsSlider() {
             </motion.button>
           </div>
 
-          <div className="hidden lg:flex absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+          <div className="hidden lg:flex absolute top-1/2 -right-12 transform -translate-y-1/2 z-20">
             <motion.button
               onClick={nextSlide}
               className="p-3 rounded-full glass hover:bg-card/50 transition-colors"
@@ -225,329 +165,408 @@ export default function SEOProjectsSlider() {
             </motion.button>
           </div>
 
-          {/* Slide Content with Swipe Support */}
+          {/* Slider Content with Swipe Support */}
           <div className="overflow-hidden">
             <motion.div
               key={activeIndex}
               initial="hidden"
               animate="visible"
               variants={cardVariants}
-              className="grid md:grid-cols-2 gap-8 items-center project-card"
+              className="grid md:grid-cols-2 gap-8 items-center"
               drag="x"
-              dragConstraints={{ left: -100, right: 100 }}
+              dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
               onDragEnd={handleDragEnd}
               whileDrag={{ scale: 0.95 }}
             >
-              <div className="order-2 md:order-1">
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: 1 }}
-                  className="space-y-6"
-                  style={{ opacity: 1 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                      {getSlideIcon(activeIndex)}
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold">{currentSlide.title}</h3>
+              {/* Slide 1: SEO Benefits + PageSpeed Metrics */}
+              {activeIndex === 0 && (
+                <>
+                  <div className="order-2 md:order-1">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="space-y-6"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">1</span>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-heading font-bold">SEO Benefits</h3>
+                      </div>
+
+                      <motion.ul className="space-y-4">
+                        {[
+                          "Higher search rankings and visibility",
+                          "Increased organic traffic and qualified leads",
+                          "Improved user experience and site performance",
+                          "Enhanced brand credibility and authority",
+                          "Sustainable long-term digital growth"
+                        ].map((benefit, idx) => (
+                          <motion.li
+                            key={idx}
+                            className="flex items-start gap-3 text-gray-300"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 + idx * 0.1 }}
+                          >
+                            <div className="mt-1 w-2 h-2 rounded-full bg-primary"></div>
+                            <span>{benefit}</span>
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+
+                      <motion.div 
+                        className="glass p-4 rounded-lg mt-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8 }}
+                      >
+                        <h4 className="font-bold mb-2">ROI Focused Approach</h4>
+                        <p className="text-gray-300 text-sm">
+                          Our SEO strategies are designed to deliver measurable business outcomes, not just traffic numbers. We focus on conversions, lead quality, and sustainable growth that directly impacts your bottom line.
+                        </p>
+                      </motion.div>
+                    </motion.div>
                   </div>
 
-                  {/* Slide 1: SEO Benefits */}
-                  {currentSlide.type === "benefits" && (
-                    <div className="space-y-6">
-                      <div className="space-y-3">
-                        <h4 className="text-xl font-semibold flex items-center gap-2">
-                          <Zap className="w-5 h-5 text-yellow-500" />
-                          SEO Benefits
-                        </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {currentSlide.benefits?.map((benefit, idx) => (
-                            <motion.div
-                              key={idx}
-                              className="flex items-center gap-3 p-3 rounded-lg glass border border-white/10"
-                              variants={itemVariants}
-                              initial="hidden"
-                              animate="visible"
-                              custom={idx}
-                            >
-                              <CheckCircle className="w-5 h-5 text-green-500" />
-                              <span className="text-sm md:text-base">{benefit}</span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Slide 2: SEO Expertise */}
-                  {currentSlide.type === "expertise" && (
-                    <div className="space-y-6">
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold flex items-center gap-2">
-                          <Shield className="w-5 h-5 text-blue-500" />
-                          Our SEO Expertise
-                        </h4>
-                        <div className="grid grid-cols-1 gap-4">
-                          {currentSlide.expertise?.map((expert, idx) => (
-                            <motion.div
-                              key={idx}
-                              className="p-4 rounded-xl glass border border-white/10"
-                              variants={itemVariants}
-                              initial="hidden"
-                              animate="visible"
-                              custom={idx}
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-gradient-to-r from-primary to-secondary">
-                                  {expert.icon}
-                                </div>
-                                <div className="flex-1">
-                                  <h5 className="font-semibold text-lg mb-1">{expert.title}</h5>
-                                  <p className="text-gray-300 text-sm mb-2">{expert.description}</p>
-                                  <div className="flex flex-wrap gap-2">
-                                    {expert.items.map((item, itemIdx) => (
-                                      <span key={itemIdx} className="px-2 py-1 text-xs rounded-full bg-primary/10 border border-primary/20">
-                                        {item}
-                                      </span>
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Slide 3: Completed Projects */}
-                  {currentSlide.type === "projects" && (
-                    <div className="space-y-6">
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold flex items-center gap-2">
-                          <TrendingUp className="w-5 h-5 text-green-500" />
-                          Success Stories
-                        </h4>
-                        <div className="grid grid-cols-1 gap-4">
-                          {currentSlide.projects?.map((project, idx) => (
-                            <motion.div
-                              key={idx}
-                              className="p-4 rounded-xl glass border border-white/10"
-                              variants={itemVariants}
-                              initial="hidden"
-                              animate="visible"
-                              custom={idx}
-                            >
-                              <div className="flex justify-between items-start mb-2">
-                                <h5 className="font-semibold text-lg">{project.title}</h5>
-                                <span className="px-2 py-1 text-xs rounded-full bg-green-500/20 text-green-300">
-                                  {project.status}
-                                </span>
-                              </div>
-                              <p className="text-gray-300 text-sm mb-3">{project.description}</p>
-                              <div className="flex items-center justify-between mb-3">
-                                <span className="text-sm font-medium text-primary">{project.metrics}</span>
-                              </div>
-                              <div className="flex flex-wrap gap-2 mb-4">
-                                {project.tags.map((tag, tagIdx) => (
-                                  <span key={tagIdx} className="px-2 py-1 text-xs rounded-full bg-primary/10 border border-primary/20">
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
-                              <motion.a
-                                href={project.demoLink}
-                                className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg glass bg-primary/10 hover:bg-primary/20 transition-colors w-full"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <ExternalLink size={16} />
-                                View Project Demo
-                              </motion.a>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              </div>
-
-              <div className="order-1 md:order-2">
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: 1 }}
-                  className="gradient-border p-1 rounded-2xl overflow-hidden"
-                  style={{ opacity: 1 }}
-                >
-                  <div className={`rounded-xl overflow-hidden bg-gradient-to-br ${currentSlide.color} p-6`}>
-                    {/* Slide 1 Right Content: Google Page Speed Meters */}
-                    {currentSlide.type === "benefits" && (
-                      <div className="space-y-8">
-                        <div className="text-center mb-6">
-                          <h4 className="text-2xl font-bold mb-2">Google Page Speed Insights</h4>
-                          <p className="text-gray-300">Performance metrics with 95+% scores</p>
-                        </div>
-                        
-                        <div className="space-y-6">
-                          {currentSlide.metrics?.map((metric, idx) => (
-                            <div key={idx} className="space-y-2">
-                              <div className="flex justify-between items-center">
-                                <span className="font-medium">{metric.label}</span>
-                                <motion.span 
-                                  className="text-xl font-bold"
-                                  initial={{ opacity: 0, scale: 0.5 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  transition={{ delay: idx * 0.2 + 0.5 }}
-                                >
-                                  {metric.value}%
-                                </motion.span>
-                              </div>
-                              <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
-                                <motion.div
-                                  className={`h-full bg-gradient-to-r ${metric.color} rounded-full origin-left`}
-                                  variants={meterVariants}
-                                  initial="hidden"
-                                  animate="visible"
-                                  custom={idx}
-                                  style={{ transformOrigin: "left" }}
-                                />
-                              </div>
-                              <div className="flex justify-between text-sm text-gray-400">
-                                <span>0</span>
-                                <span>50</span>
-                                <span>100</span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="mt-8 p-4 glass rounded-lg border border-white/10">
-                          <div className="flex items-center gap-3">
-                            <Clock className="w-5 h-5 text-green-500" />
-                            <div>
-                              <h5 className="font-semibold">Performance Impact</h5>
-                              <p className="text-sm text-gray-300">95+% scores improve user engagement and SEO rankings</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Slide 2 Right Content: Expertise Visualization */}
-                    {currentSlide.type === "expertise" && (
-                      <div className="space-y-6">
-                        <div className="text-center mb-6">
-                          <h4 className="text-2xl font-bold mb-2">SEO Process Flow</h4>
-                          <p className="text-gray-300">Our comprehensive SEO strategy</p>
-                        </div>
-                        
-                        <div className="relative h-64">
-                          {/* Animated process flow */}
-                          <motion.div
-                            className="absolute inset-0 border-2 border-dashed border-primary/30 rounded-xl"
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                          />
+                  <div className="order-1 md:order-2">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="gradient-border p-1 rounded-2xl overflow-hidden"
+                    >
+                      <div className={`rounded-xl overflow-hidden bg-gradient-to-br ${seoSlides[activeIndex].color} p-4`}>
+                        <div className="neomorphic overflow-hidden rounded-lg bg-card p-6 h-full flex flex-col items-center justify-center">
+                          <h4 className="text-lg font-bold mb-6 text-center">Google PageSpeed Insights</h4>
                           
-                          {currentSlide.expertise?.map((expert, idx) => {
-                            const angle = (idx / (currentSlide.expertise?.length || 1)) * 360
-                            const x = Math.cos((angle * Math.PI) / 180) * 100
-                            const y = Math.sin((angle * Math.PI) / 180) * 100
+                          {/* PageSpeed Metrics */}
+                          <div className="w-full space-y-8">
+                            {/* Mobile Score */}
+                            <div className="text-center">
+                              <div className="text-sm font-medium mb-2 flex items-center justify-center gap-2">
+                                <span className="block w-3 h-3 bg-green-500 rounded-full"></span>
+                                Mobile Performance
+                              </div>
+                              <div className="relative w-40 h-40 mx-auto">
+                                <svg className="w-full h-full transform -rotate-90">
+                                  <circle
+                                    cx="80"
+                                    cy="80"
+                                    r="65"
+                                    fill="none"
+                                    stroke="#374151"
+                                    strokeWidth="12"
+                                    className="text-gray-700"
+                                  />
+                                  <motion.circle
+                                    cx="80"
+                                    cy="80"
+                                    r="65"
+                                    fill="none"
+                                    stroke="#10b981"
+                                    strokeWidth="12"
+                                    strokeDasharray={2 * Math.PI * 65}
+                                    initial={{ strokeDashoffset: 2 * Math.PI * 65 }}
+                                    animate={{ strokeDashoffset: 2 * Math.PI * 65 * (1 - 96/100) }}
+                                    transition={{ duration: 1.5, ease: "easeOut" }}
+                                  />
+                                </svg>
+                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                  <div className="text-4xl font-bold text-green-400">96</div>
+                                  <div className="text-sm text-gray-400 mt-1">/100</div>
+                                </div>
+                              </div>
+                              <p className="text-sm text-gray-400 mt-2">Lightning fast mobile experience</p>
+                            </div>
                             
-                            return (
-                              <motion.div
-                                key={idx}
-                                className="absolute left-1/2 top-1/2 w-16 h-16 -ml-8 -mt-8"
-                                initial={{ x: 0, y: 0 }}
-                                animate={{ x, y }}
-                                transition={{ delay: idx * 0.3, duration: 1, ease: "easeOut" }}
-                              >
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                                  {expert.icon}
-                                </div>
-                              </motion.div>
-                            )
-                          })}
-
-                          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                              <Target className="w-10 h-10 text-white" />
-                            </div>
-                            <p className="mt-2 text-sm font-semibold">SEO Strategy</p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Slide 3 Right Content: Projects Visualization */}
-                    {currentSlide.type === "projects" && (
-                      <div className="space-y-6">
-                        <div className="text-center mb-6">
-                          <h4 className="text-2xl font-bold mb-2">Project Results Overview</h4>
-                          <p className="text-gray-300">Real results from completed SEO projects</p>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 gap-4">
-                          {currentSlide.projects?.map((project, idx) => (
-                            <motion.div
-                              key={idx}
-                              className={`p-4 rounded-xl bg-gradient-to-br ${project.color} border border-white/10`}
-                              initial={{ x: 50, opacity: 0 }}
-                              animate={{ x: 0, opacity: 1 }}
-                              transition={{ delay: idx * 0.2 }}
-                            >
-                              <div className="flex items-center justify-between mb-2">
-                                <h5 className="font-semibold">{project.title}</h5>
-                                <div className="text-xs px-2 py-1 rounded-full bg-white/10">
-                                  {project.status}
+                            {/* Desktop Score */}
+                            <div className="text-center">
+                              <div className="text-sm font-medium mb-2 flex items-center justify-center gap-2">
+                                <span className="block w-3 h-3 bg-green-500 rounded-full"></span>
+                                Desktop Performance
+                              </div>
+                              <div className="relative w-40 h-40 mx-auto">
+                                <svg className="w-full h-full transform -rotate-90">
+                                  <circle
+                                    cx="80"
+                                    cy="80"
+                                    r="65"
+                                    fill="none"
+                                    stroke="#374151"
+                                    strokeWidth="12"
+                                    className="text-gray-700"
+                                  />
+                                  <motion.circle
+                                    cx="80"
+                                    cy="80"
+                                    r="65"
+                                    fill="none"
+                                    stroke="#10b981"
+                                    strokeWidth="12"
+                                    strokeDasharray={2 * Math.PI * 65}
+                                    initial={{ strokeDashoffset: 2 * Math.PI * 65 }}
+                                    animate={{ strokeDashoffset: 2 * Math.PI * 65 * (1 - 98/100) }}
+                                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+                                  />
+                                </svg>
+                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                  <div className="text-4xl font-bold text-green-400">98</div>
+                                  <div className="text-sm text-gray-400 mt-1">/100</div>
                                 </div>
                               </div>
-                              <div className="space-y-2">
-                                <div className="flex justify-between text-sm">
-                                  <span className="text-gray-300">Traffic Growth:</span>
-                                  <span className="font-semibold text-green-400">+300%</span>
-                                </div>
-                                <div className="flex justify-between text-sm">
-                                  <span className="text-gray-300">ROI:</span>
-                                  <span className="font-semibold text-blue-400">5x</span>
-                                </div>
-                                <div className="flex justify-between text-sm">
-                                  <span className="text-gray-300">Rankings:</span>
-                                  <span className="font-semibold text-yellow-400">25+ #1</span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-
-                        <div className="mt-6 p-4 glass rounded-lg border border-white/10 text-center">
-                          <h5 className="font-semibold mb-2">Average Results Across All Projects</h5>
-                          <div className="grid grid-cols-2 gap-4 mt-4">
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-green-400">215%</div>
-                              <div className="text-xs text-gray-400">Avg. Traffic Increase</div>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-blue-400">4.2x</div>
-                              <div className="text-xs text-gray-400">Avg. ROI</div>
+                              <p className="text-sm text-gray-400 mt-2">Optimized desktop experience</p>
                             </div>
                           </div>
                         </div>
                       </div>
-                    )}
+                    </motion.div>
                   </div>
-                </motion.div>
-              </div>
+                </>
+              )}
+
+              {/* Slide 2: SEO Expertise */}
+              {activeIndex === 1 && (
+                <>
+                  <div className="order-2 md:order-1">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="space-y-6"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">2</span>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-heading font-bold">SEO Expertise</h3>
+                      </div>
+
+                      <motion.p className="text-gray-300">
+                        Our comprehensive SEO approach combines technical excellence with strategic content planning to deliver sustainable growth and measurable ROI for businesses of all sizes.
+                      </motion.p>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {[
+                          "Technical SEO & Site Architecture",
+                          "Keyword Research & Content Strategy",
+                          "On-Page & UX Optimization",
+                          "Link Building & Authority Development",
+                          "Local SEO & Google Business Profile",
+                          "E-commerce SEO & Product Schema"
+                        ].map((expertise, idx) => (
+                          <motion.div
+                            key={idx}
+                            className="glass p-4 rounded-lg flex items-start gap-3"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 + idx * 0.1 }}
+                          >
+                            <div className="mt-1 w-2 h-2 rounded-full bg-primary"></div>
+                            <span className="font-medium">{expertise}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      <div className="space-y-4 pt-4 border-t border-white/10">
+                        <div>
+                          <h4 className="text-lg font-medium mb-2">Our Methodology</h4>
+                          <p className="text-gray-300">
+                            We employ a data-driven approach that begins with comprehensive audits and competitor analysis, followed by strategic implementation and continuous optimization based on performance metrics.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-medium mb-2">Growth Timeline</h4>
+                          <div className="space-y-3">
+                            {[
+                              "Months 1-2: Technical foundation & quick wins",
+                              "Months 3-4: Content expansion & authority building",
+                              "Months 5-6: Significant traffic growth begins",
+                              "Months 7+: Sustainable long-term visibility"
+                            ].map((phase, idx) => (
+                              <div key={idx} className="flex items-start gap-3 text-sm text-gray-300">
+                                <div className="mt-1 w-2 h-2 rounded-full bg-primary"></div>
+                                <span>{phase}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  <div className="order-1 md:order-2">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="gradient-border p-1 rounded-2xl overflow-hidden"
+                    >
+                      <div className={`rounded-xl overflow-hidden bg-gradient-to-br ${seoSlides[activeIndex].color} p-4`}>
+                        <div className="neomorphic overflow-hidden rounded-lg bg-card p-6 h-full flex flex-col items-center justify-center">
+                          <div className="text-center mb-8">
+                            <h4 className="text-xl font-bold mb-2">SEO Impact Metrics</h4>
+                            <p className="text-gray-400">Typical results within 6-12 months</p>
+                          </div>
+                          
+                          {/* SEO Metrics */}
+                          <div className="w-full space-y-6">
+                            <div className="space-y-4">
+                              {[
+                                { label: "Organic Traffic Growth", value: 185, color: "bg-green-500/20 border-green-500 text-green-400" },
+                                { label: "Top 3 Rankings", value: 142, color: "bg-blue-500/20 border-blue-500 text-blue-400" },
+                                { label: "Conversion Rate", value: 34, color: "bg-purple-500/20 border-purple-500 text-purple-400" },
+                                { label: "Bounce Rate Reduction", value: 28, color: "bg-cyan-500/20 border-cyan-500 text-cyan-400" }
+                              ].map((metric, idx) => (
+                                <motion.div
+                                  key={idx}
+                                  className="space-y-2"
+                                  initial={{ opacity: 0, x: 50 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: 0.5 + idx * 0.2 }}
+                                >
+                                  <div className="flex justify-between text-sm">
+                                    <span className="text-gray-300">{metric.label}</span>
+                                    <span className={`font-bold ${metric.color.split(' ')[2]}`}>+{metric.value}{metric.label.includes('Rate') ? '%' : ''}</span>
+                                  </div>
+                                  <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <motion.div
+                                      className={`h-full ${metric.color.split(' ')[0]}`}
+                                      initial={{ width: 0 }}
+                                      animate={{ width: `${Math.min(metric.value, 100)}%` }}
+                                      transition={{ duration: 1.5, delay: 0.5 + idx * 0.2 }}
+                                    ></motion.div>
+                                  </div>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </>
+              )}
+
+              {/* Slide 3: Completed Projects */}
+              {activeIndex === 2 && (
+                <>
+                  <div className="order-2 md:order-1">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="space-y-6"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">3</span>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-heading font-bold">Our SEO Success Stories</h3>
+                      </div>
+
+                      <motion.p className="text-gray-300">
+                        Explore our portfolio of successful SEO implementations that have transformed digital visibility and driven significant business growth across multiple industries.
+                      </motion.p>
+
+                      <div className="space-y-6 pt-4 border-t border-white/10 max-h-[500px] overflow-y-auto pr-2">
+                        {projects.map((project, idx) => (
+                          <motion.div
+                            key={idx}
+                            className="glass p-5 rounded-xl"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 + idx * 0.2 }}
+                          >
+                            <h4 className="text-lg font-bold mb-2">{project.title}</h4>
+                            <p className="text-sm text-gray-300 mb-3">{project.description}</p>
+                            
+                            <div className="grid grid-cols-2 gap-2 mb-4">
+                              {project.features.slice(0, 4).map((feature, fidx) => (
+                                <div key={fidx} className="flex items-center gap-1 text-xs">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            <motion.a
+                              href={project.links.demo}
+                              className="inline-flex items-center gap-2 text-sm text-primary hover:text-secondary transition-colors"
+                              whileHover={{ x: 5 }}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink size={14} />
+                              View Live Demo
+                            </motion.a>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  <div className="order-1 md:order-2">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="gradient-border p-1 rounded-2xl overflow-hidden"
+                    >
+                      <div className={`rounded-xl overflow-hidden bg-gradient-to-br ${seoSlides[activeIndex].color} p-4`}>
+                        <div className="neomorphic overflow-hidden rounded-lg bg-card p-6 h-full flex flex-col items-center justify-center">
+                          <div className="text-center mb-8">
+                            <h4 className="text-xl font-bold mb-2">Project Results</h4>
+                            <p className="text-gray-400">Average improvements across our SEO projects</p>
+                          </div>
+                          
+                          {/* Project Results */}
+                          <div className="w-full space-y-6">
+                            <div className="grid grid-cols-2 gap-4 text-center">
+                              {[
+                                { label: "Traffic Increase", value: "174%", description: "Average organic traffic growth" },
+                                { label: "Top 3 Rankings", value: "48", description: "Keywords ranking in positions 1-3" },
+                                { label: "Revenue Impact", value: "2.3x", description: "Return on SEO investment" },
+                                { label: "Domain Authority", value: "+18", description: "Average improvement" }
+                              ].map((result, idx) => (
+                                <motion.div
+                                  key={idx}
+                                  className="bg-card/50 p-4 rounded-lg border border-white/5"
+                                  initial={{ opacity: 0, scale: 0.9 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  transition={{ delay: 0.5 + idx * 0.1 }}
+                                >
+                                  <div className="text-2xl font-bold text-primary mb-1">{result.value}</div>
+                                  <div className="text-sm font-medium mb-1">{result.label}</div>
+                                  <div className="text-xs text-gray-400">{result.description}</div>
+                                </motion.div>
+                              ))}
+                            </div>
+                            
+                            <div className="text-center pt-4 border-t border-white/10 mt-4">
+                              <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors"
+                              >
+                                View Full Portfolio
+                              </motion.button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </>
+              )}
             </motion.div>
           </div>
 
           {/* Slide Indicators */}
           <div className="flex justify-center mt-8 gap-2">
-            {seoProjects.map((_, index) => (
+            {seoSlides.map((_, index) => (
               <motion.button
                 key={index}
                 onClick={() => setActiveIndex(index)}
@@ -561,77 +580,28 @@ export default function SEOProjectsSlider() {
             ))}
           </div>
 
-          {/* Mobile Swipe Hint */}
-          <div className="lg:hidden text-center mt-4">
-            <p className="text-sm text-gray-400">Swipe left or right to navigate slides</p>
+          {/* Mobile Navigation Buttons */}
+          <div className="lg:hidden flex justify-center mt-6 gap-4">
+            <motion.button
+              onClick={prevSlide}
+              className="p-3 rounded-full glass hover:bg-card/50 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={20} />
+            </motion.button>
+            <motion.button
+              onClick={nextSlide}
+              className="p-3 rounded-full glass hover:bg-card/50 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Next slide"
+            >
+              <ChevronRight size={20} />
+            </motion.button>
           </div>
         </div>
-
-        {/* Mobile Navigation Buttons */}
-        <div className="lg:hidden flex justify-center mt-6 gap-4">
-          <motion.button
-            onClick={prevSlide}
-            className="p-3 rounded-full glass hover:bg-card/50 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={20} />
-          </motion.button>
-          <motion.button
-            onClick={nextSlide}
-            className="p-3 rounded-full glass hover:bg-card/50 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Next slide"
-          >
-            <ChevronRight size={20} />
-          </motion.button>
-        </div>
-
-        {/* Additional Info Section */}
-        <motion.div
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
-          <motion.div
-            className="glass p-5 rounded-xl hover:bg-card/30 transition-all"
-            variants={cardVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mb-4">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <h4 className="text-lg font-bold mb-2">Performance Focused</h4>
-            <p className="text-sm text-gray-400">95+% Google Page Speed scores ensure optimal performance and better rankings</p>
-          </motion.div>
-
-          <motion.div
-            className="glass p-5 rounded-xl hover:bg-card/30 transition-all"
-            variants={cardVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
-              <Shield className="w-6 h-6 text-white" />
-            </div>
-            <h4 className="text-lg font-bold mb-2">Comprehensive SEO</h4>
-            <p className="text-sm text-gray-400">Full-spectrum SEO services from technical to content optimization</p>
-          </motion.div>
-
-          <motion.div
-            className="glass p-5 rounded-xl hover:bg-card/30 transition-all"
-            variants={cardVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mb-4">
-              <TrendingUp className="w-6 h-6 text-white" />
-            </div>
-            <h4 className="text-lg font-bold mb-2">Proven Results</h4>
-            <p className="text-sm text-gray-400">Documented case studies showing significant traffic and revenue growth</p>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
