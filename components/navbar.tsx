@@ -9,6 +9,7 @@ const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
+  { name: "SEO", href: "#seo" },
   { name: "Projects", href: "#projects" },
   { name: "Templates", href: "/templates" },
   { name: "Experience", href: "#experience" },
@@ -21,6 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Determines if the scroll position is past 20px
       setScrolled(window.scrollY > 20)
     }
 
@@ -37,6 +39,7 @@ export default function Navbar() {
           Waqas.
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item, index) => (
             <motion.div
@@ -45,7 +48,10 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <Link href={item.href} className="text-sm font-medium relative group">
+              <Link
+                href={item.href}
+                className="text-sm font-medium relative group hover:text-white transition-colors"
+              >
                 {item.name}
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
               </Link>
@@ -53,11 +59,13 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* Mobile Menu Button */}
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
+      {/* Mobile Menu Content */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -75,7 +83,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Link href={item.href} className="block py-2 text-lg font-medium" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href={item.href}
+                    className="block py-2 text-lg font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
                     {item.name}
                   </Link>
                 </motion.div>
