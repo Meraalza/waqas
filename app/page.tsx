@@ -6,7 +6,8 @@ import HeroSectionNew from "@/components/hero-section-new"
 import StatsSection from "@/components/stats-section"
 import ServicesSection from "@/components/services-section-visual"
 import AboutSection from "@/components/about-section"
-import ProjectsSection from "@/components/projects-section"
+// import ProjectsSection from "@/components/projects-section" // Remove the old import
+import SEO from "@/components/seo" // <-- 1. Import the new component
 import LatestBlogsSection from "@/components/latest-blogs-section"
 import AIChatSection from "@/components/ai-chat-section"
 import ContactSection from "@/components/contact-section"
@@ -53,6 +54,7 @@ export default function Home() {
           <HeroSectionNew />
           <AboutSection />
           <ServicesSection />
+          <SEO />
           <ProjectsSection />
           <AIChatSection />
           <LatestBlogsSection />
